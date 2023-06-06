@@ -1,0 +1,72 @@
+
+    
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        margin-top: 10%;
+        width: 100%;
+    
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    /* or 93% */
+    
+    
+    color: #000000;
+    }
+    
+    .form{
+        margin-top: 40px;
+    }
+    
+    .button{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .countp{
+        display: flex;
+    
+        justify-content: center;
+    }
+    .count{
+        color: black;
+    }
+    
+    .label{
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .text{
+        border-color: #000000;
+    }
+    
+    .btn{
+        display: flex;
+        align-items: flex-start ;
+        width: 20%;
+        justify-content: center;
+    }
+    
+    .img{
+    
+        position: absolute;
+    width: 546px;
+    height: 935px;
+    left: 846px;
+    top: 332px;
+    }
+
+    .container{
+        margin-top: 10px;
+    }
+
+    .btn{
+
+        display: flex;
+        flex-direction: row;
+    }

@@ -1,0 +1,103 @@
+.bold-content {
+    font-weight: bolder;
+    line-height: 33.75px;
+    font-size: 25px;
+  }
+  
+  .heading h1 {
+    font-size: 80px;
+    line-height: 108px;
+  }
+  
+  .heading h6 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 33.75px;
+  }
+  
+  nav {
+    width: 95%;
+    font-size: 25px;
+  }
+  
+  #name {
+    border-radius: 15px;
+    width: 18rem;
+    padding-left: 10%;
+  }
+  
+  #search-icon {
+    position: relative;
+    bottom: 50%;
+    left: 3%;
+  }
+  
+  #delete-icon {
+    position: relative;
+    bottom: 50%;
+    left: 85%;
+  }
+  
+  .lighter-text-heading {
+    color: #969191;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 33.75px;
+  }
+  
+  .bold-content-grid {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  
+  .lighter-text-content {
+    color: #969191;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 33.75px;
+  }
+  
+  .blog-heading {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40.5px;
+  }
+  
+  .blog-overview {
+    width: 70%;
+    margin-right: 3%;
+  }
+  
+  .blog-content {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  
+  .blog-img {
+    width: 220px;
+    height: 300.63px;
+    background: #eeeeee;
+  }
+  
+  .blog-img-end {
+    width: 338px;
+    height: 1251px;
+    background: #eeeeee;
+  }
+  
+  .blog-side-section {
+    width: 30%;
+  }
+  
+  a {
+    color: #000;
+  }
+  
+  a:hover {
+    color: #000000ac;
+  }
+  

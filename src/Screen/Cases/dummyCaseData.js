@@ -1,0 +1,55 @@
+const dummyCaseData = [
+    {
+      caseNo: "2021-001",
+      caseName: "Smith v. Johnson",
+      partyName: "John Smith",
+      courtName: "District Court",
+      partyContactNo: "1234567890",
+      adversePartyName: "Michael Johnson",
+      adversePartyLawyerName: "Emily Williams",
+      adversePartyLawyerNo: "9876543210",
+    },
+    {
+      caseNo: "2021-002",
+      caseName: "Doe v. Roe",
+      partyName: "Jane Doe",
+      courtName: "Supreme Court",
+      partyContactNo: "5555555555",
+      adversePartyName: "John Roe",
+      adversePartyLawyerName: "Robert Davis",
+      adversePartyLawyerNo: "4444444444",
+    },
+    {
+      caseNo: "2021-003",
+      caseName: "Black Corp. v. White Corp.",
+      partyName: "Black Corporation",
+      courtName: "High Court",
+      partyContactNo: "9876543210",
+      adversePartyName: "White Corporation",
+      adversePartyLawyerName: "Jessica Anderson",
+      adversePartyLawyerNo: "1234567890",
+    },
+    {
+      caseNo: "2021-004",
+      caseName: "Garcia v. Martinez",
+      partyName: "Maria Garcia",
+      courtName: "County Court",
+      partyContactNo: "7777777777",
+      adversePartyName: "Carlos Martinez",
+      adversePartyLawyerName: "David Thompson",
+      adversePartyLawyerNo: "8888888888",
+    },
+    {
+      caseNo: "2021-005",
+      caseName: "Brown v. Davis",
+      partyName: "Emily Brown",
+      courtName: "Circuit Court",
+      partyContactNo: "2222222222",
+      adversePartyName: "Daniel Davis",
+      adversePartyLawyerName: "Olivia Turner",
+      adversePartyLawyerNo: "6666666666",
+    },
+  ];
+  
+  export default dummyCaseData;
+  
