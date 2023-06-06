@@ -14,7 +14,7 @@ after this execute command  'npm run dev'
 
 2.addition of the  profile by senior dev Dhruv and his co partners.
 
-3.improve the blog and news section .[Dhruva,abhash,phani and hrishit] this pages are not upto the mark,Pratham please guide and help them,for this
+3.improve the blog and news section .[Dhruva,abhash,phani ,sasi and hrishit] this pages are not upto the mark,Pratham please guide and help them,for this
  task Pratham is the leader.use figma layout and workflow.
 
 
