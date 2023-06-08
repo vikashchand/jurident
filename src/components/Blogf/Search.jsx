@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { IconContext } from "react-icons";
 import { HiTrendingUp } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
-import { BiCross } from "react-icons/bi";
+import { BsSearch } from "react-icons/bs";
+import { RxCross2 } from "react-icons/rx";
 
 const Search = () => {
   return (
@@ -20,11 +20,13 @@ const Search = () => {
           class="form-control"
           type="text"
           id="name"
+          name="text"
           placeholder="Search"
         />
-        <BiSearch style={{ position: "relative", bottom: "50%", left: "3%" }} />
-        <BiCross
-          style={{ position: "relative", bottom: "50%", left: "85%" }}
+
+        <BsSearch style={{ position: "relative", bottom: "45%", left: "2%" }} />
+        <RxCross2
+          style={{ position: "relative", bottom: "65%", left: "90%" }}
         />
       </form>
     </div>

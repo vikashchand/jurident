@@ -1,22 +1,19 @@
-import React from 'react'
+import React from "react";
+import BlogNavbar from "../../components/Blogf/BlogNavbar";
+import Search from "../../components/Blogf/Search";
+import Trending from "../../components/Blogf/Trending";
+import BlogsOverall from "../../components/Blogf/BlogsOverall";
+import "./Blogs.css";
 
-import Blog from '../../components/Blogf/Blog'
-import BlogNavbar from '../../components/Blogf/BlogNavbar'
-
-import Trending from '../../components/Blogf/Trending'
-import './Blogs.css'
-import Search from '../../components/Blogf/Search'
 const Blogs = () => {
   return (
-    <div>Blogs
-    <BlogNavbar/>
-  <Search/>
-    <Trending/>
-    <Blog/>
-
-
+    <div>
+      <BlogNavbar />
+      <Search />
+      <Trending />
+      <BlogsOverall />
     </div>
-  )
-}
+  );
+};
 
-export default Blogs
+export default Blogs;
