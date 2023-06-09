@@ -9,15 +9,16 @@ const Navbar = () => {
         <div class="bold-content">Chennai, India</div>
       </div>
       <hr style={line_style} />
-      <div className="heading py-2 d-flex justify-content-center">
+      <div className="heading py-5 d-flex justify-content-center">
         <div className="text-center d-flex flex-column">
-          <Link to="/">
+          <Link to="/Blogs">
             <h1 className="bold-content">JURIDENT</h1>
           </Link>
           <h6 className="align-self-end">The Blog</h6>
         </div>
       </div>
-      <nav className="border-5 border-top border-bottom mx-auto mt-2 py-2">
+      <hr style={line_style} />
+      <nav className="mx-auto pb-4">
         <ul className="nav nav-fill">
           <li className="nav-item">
             <a className="nav-link bold-content text-dark" href="!#">
@@ -51,6 +52,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+      <hr style={line_style} />
     </div>
   );
 };
