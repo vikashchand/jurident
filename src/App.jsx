@@ -1,6 +1,6 @@
 
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
+
 import {BrowserRouter as Router, Routes ,Route } from 'react-router-dom';
 import Home from './Screen/Home/Home';
 
@@ -11,6 +11,9 @@ import Blogs from './Screen/Blogs/Blogs';
 
 import ContactPage from './Screen/Contactus/ContactPage';
 import ChatBot from './components/ChatBot/ChatBot';
+import Navbar from './components/Navbar/Navbar';
+import Calendar from './components/calendar/Calendar';
+
 
 
 
@@ -20,7 +23,7 @@ function App() {
 <>
   
     <Router>
-    <Navbar/>
+   <Navbar/>
     <Routes>
 
     <Route exact path="/" element={<Home/>}/>
@@ -30,6 +33,7 @@ function App() {
     <Route  path="/About" element={<About/>}/>
     <Route  path="/News" element={<News/>}/>
     <Route  path="/Blogs" element={<Blogs/>}/>
+    <Route  path="/Calendar" element={<Calendar/>}/>
     <Route  path="/Contact" element={<ContactPage/>}/>
    
   </Routes>

@@ -26,7 +26,7 @@ function ChatBot() {
   const getResponse = () => {
     const userText = userInput.trim();
 
-    if (userText !== '') {
+    if (userText != '') {
       const botMessage = {
         id: chatMessages.length + 1,
         message: userText,

@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const BlogNavbar = () => {
+const Navbar = () => {
   return (
     <div>
       <div className="d-flex justify-content-between p-4 mx-3">
@@ -10,7 +11,9 @@ const BlogNavbar = () => {
       <hr style={line_style} />
       <div className="heading py-2 d-flex justify-content-center">
         <div className="text-center d-flex flex-column">
-          <h1 className="bold-content">JURIDENT</h1>
+          <Link to="/">
+            <h1 className="bold-content">JURIDENT</h1>
+          </Link>
           <h6 className="align-self-end">The Blog</h6>
         </div>
       </div>
@@ -22,9 +25,9 @@ const BlogNavbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link bold-content text-dark" href="!#">
+            <Link to="/" className="nav-link bold-content text-dark" href="!#">
               All Blogs
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link bold-content text-dark" href="!#">
@@ -61,4 +64,4 @@ const line_style = {
   marginLeft: "2.5%",
 };
 
-export default BlogNavbar;
+export default Navbar;
