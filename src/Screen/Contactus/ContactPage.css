@@ -1,11 +1,18 @@
-
+.title{
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 40px;
+}
     
-    .content{
+    .text{
         display: flex;
         justify-content: space-between;
         align-items: left;
-        margin-top: 10%;
-        width: 100%;
+        margin-top: 100px;
+        
+
     
     font-family: 'Satoshi';
     font-style: normal;
@@ -24,13 +31,13 @@
     
     .button{
         display: flex;
-        justify-content: space-between;
+        align-items: center;
     }
     
     .countp{
         display: flex;
     
-        justify-content: center;
+        justify-content: right;
     }
     .count{
         color: black;
@@ -47,22 +54,17 @@
     
     .btn{
         display: flex;
-        align-items: flex-start ;
         width: 20%;
         justify-content: center;
     }
     
-    .img{
-    
-        position: absolute;
-    width: 546px;
-    height: 935px;
-    left: 846px;
-    top: 332px;
-    }
+
 
     .container{
-        margin-top: 10px;
+        position: absolute;
+        margin-top: 4px;
+        margin-left: 7%;
+        margin-right: 7%;
     }
 
     .btn{
@@ -70,3 +72,4 @@
         display: flex;
         flex-direction: row;
     }
+
