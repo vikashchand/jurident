@@ -1,5 +1,5 @@
 import React from "react";
-import lawyer from "../../../assets/lawyer.jpeg";
+import lawyer from "../../../assets/Lawyerpic.jpeg";
 import "./aboutus.css";
 
 const Aboutus = () => {
