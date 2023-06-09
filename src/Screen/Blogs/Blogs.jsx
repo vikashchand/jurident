@@ -1,14 +1,15 @@
 import React from "react";
-import BlogNavbar from "../../components/Blogf/BlogNavbar";
+
 import Search from "../../components/Blogf/Search";
 import Trending from "../../components/Blogf/Trending";
 import BlogsOverall from "../../components/Blogf/BlogsOverall";
 import "./Blogs.css";
+import Navbar from "../../components/Blogf/layout/Navbar";
 
 const Blogs = () => {
   return (
     <div>
-      <BlogNavbar />
+      <Navbar />
       <Search />
       <Trending />
       <BlogsOverall />
