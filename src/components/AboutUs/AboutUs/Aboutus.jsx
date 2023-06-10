@@ -17,7 +17,8 @@ const Aboutus = () => {
           name], we strive to provide [describe your products/services]. Our
           team is committed to [describe your core values or principles]. If you
           have any questions or would like to learn more about us, feel free to
-          contact us at [provide contact information].
+          contact us at our email id. If you have any more questions, head on to 
+          the faq section!
         </p>
       </div>
     </div>
