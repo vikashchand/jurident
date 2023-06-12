@@ -18,12 +18,29 @@ const ProfileBox = () => {
     setNotification(val);
   };
 
+<<<<<<< HEAD
  
 
   return (
     
     <div className="m-10 p-5 w-full bg-zinc-300  rounded-lg shadow-lg">
      
+=======
+  const handleLogout = () => {
+    // Handle form submission logic here
+    console.log("Logout");
+  };
+
+  return (
+    <div className="m-10 p-5 w-full bg-zinc-300  rounded-lg shadow-lg">
+      <div className="flex justify-center items-center ">
+        <img
+          src="/user.png"
+          alt="Profile"
+          className="w-32 h-32 rounded-full object-cover"
+        />
+      </div>
+>>>>>>> e2d7ba34e92704af3e995648f87cee53bac263d6
       <div className="flex flex-col space-y-0 justify-center items center w-full py-2 border-b border-white ">
         <h2 className="text-2xl text-zinc-500 font-bold text-center m-0 p-0 ">
           Chris Lewis
@@ -80,7 +97,19 @@ const ProfileBox = () => {
           <h2>Feedback Page</h2>
         </div>
       </div>
+<<<<<<< HEAD
       
+=======
+      <div className="w-full my-2 flex justify-center">
+        <button
+          className="bg-black text-white rounded-full px-4 py-2 w-44 "
+          onClick={handleLogout}
+        >
+          {" "}
+          Logout{" "}
+        </button>
+      </div>
+>>>>>>> e2d7ba34e92704af3e995648f87cee53bac263d6
     </div>
     
   );

@@ -1,6 +1,11 @@
 import React from 'react'
+<<<<<<< HEAD
 import profile from '../../assets/Lawyerpic.jpeg'
 import bell from '../../assets/Lawyerpic.jpeg'
+=======
+import profile from '../assets/profile.png'
+import bell from '../assets/bell.svg'
+>>>>>>> e2d7ba34e92704af3e995648f87cee53bac263d6
 
 const Navbar = () => {
   return (
