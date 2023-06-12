@@ -82,34 +82,44 @@ function Navbar() {
                 </NavLink>
               </li>
 
+            
              
               
-              <li> {isAuthenticated ? (
-                <button className="input-button" onClick={() => logout({ returnTo: window.location.origin })}>
+               {isAuthenticated ? (
+                <li className="navbar-container">
+                <NavLink
+                  to="/profilee"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                 
+                  <img className="image" src={user.picture} alt={user.name} /> 
+                </NavLink>
+                <li className="nav-item">
+                <button className="btn" onClick={() => logout({ returnTo: window.location.origin })}>
                   Log Out
                 </button>
+                
+                </li>
+               
+              </li>
+          
+              
+
               ) : (
-                <button className="input-button" onClick={loginWithRedirect}>
+                <button className="btn" onClick={loginWithRedirect}>
                   Login
                 </button>
               )}
-              </li>
+              
 
                 
             </ul>
             
-            <div className="pro">
-          {isAuthenticated &&<h5>
-    
-            <img className="image" src={user.picture} alt={user.name} />
-            <h6>{user.name}</h6>
             
-            </h5>}
-            </div>
-      
           </div>
-          
-          
          
         </nav>
       </IconContext.Provider>
