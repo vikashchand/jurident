@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+//This is a NEWS card template section done using tailwind CSS.
+
 export default function MyCard(props) {
   const myProp = props;
   return (
