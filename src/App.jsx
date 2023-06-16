@@ -8,7 +8,7 @@ import Newss from '../src/components/Mypages/MyNews'
 
 import Services from "./Screen/Services/Services";
 import About from "./Screen/About/About";
-i//mport News from "./Screen/News/News";
+import News from "./Screen/News/News";
 import Blogs from "./Screen/Blogs/Blogs";
 import Blog from "../src/components/Blogf/Blog";
 
@@ -34,7 +34,7 @@ function App() {
                             <Route
                                 path={id}
                                 element={
-                                    <Newss
+                                    <News
                                         author={author}
                                         title={title}
                                         description={description}
@@ -50,7 +50,7 @@ function App() {
 
           <Route path="/Services" element={<Services />} />
           <Route path="/About" element={<About />} />
-        
+          <Route path="/News" element={<News />} />
           <Route path="/profilee" element={<About_Us_Page />} />
           <Route exact path="/Blogs" element={<Blogs />} />
           <Route exact path="/Blogs/:topic" element={<Blog />} />
