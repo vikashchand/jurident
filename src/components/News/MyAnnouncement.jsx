@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import Card from "./MyCard"
 
+// This is a Announcements section and as of now arrangement of components is done, JSON data rendering is left/
+
 function MyAnnouncement() {
   return (
     <>
