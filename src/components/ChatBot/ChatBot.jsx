@@ -61,7 +61,7 @@ const ChatBot = () => {
     const defaultBotMessage = {
       id: chatMessages.length + 2,
       message:
-        "Hi, I am Jurident, your virtual assistant for legal advice. How can I assist you today? type home,contact or services to navigate to the respective pages.",
+        "Hi, I am Jurident, your virtual assistant for legal advices. How can I assist you today? type home,contact or services to navigate to the respective pages.",
       sender: 'bot',
       timestamp: getTime(),
     };
