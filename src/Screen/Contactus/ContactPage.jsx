@@ -42,26 +42,26 @@ function ContactPage() {
 
   return (
     <div className="container1" style={{ width: "100%" }}>
-      <div style={{ width: "50%" }}>
+      <div style={{ width: "125%" }}>
         <h1 className="container title mt-10">CONTACT US </h1>
         <div className="container " style={{ width: "100%" }} >
-          <div className="text" style={{ width: "80%" }}>
+          <div className="text" style={{ width: "80%", color:"black" }}>
             Let’s Connect: We’re here to help, and we’d love to hear from you!
           Whether you have a question, a comment, or just want to chat, you can
           reach out to us through the contact form on this page, or by phone,
           email, or social media.
           </div>
-          <button type="button" class="inline-flex items-center justify-evenly sm:w-1/2 md:w-72 mt-6 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"><MdOutlineMessage></MdOutlineMessage>VIA SUPPORT CHAT</button>
-          <button type="button" class=" inline-flex items-center justify-evenly sm:w-1/2 md:w-72 mt-6 md:ml-12 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"><FiPhone></FiPhone>VIA CALL</button>
+          <button type="button" class="btn1 inline-flex items-center justify-evenly sm:w-1/2 md:w-72 mt-6 text-white bg-yellow-600 hover:bg-yellow-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-700 dark:border-yellow-700"><MdOutlineMessage></MdOutlineMessage>VIA SUPPORT CHAT</button>
+          <button type="button" class="btn1 inline-flex items-center justify-evenly sm:w-1/2 md:w-72 mt-6 md:ml-12 text-white bg-yellow-600 hover:bg-yellow-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-700 dark:border-gray-700"><FiPhone></FiPhone>VIA CALL</button>
           <div>
-            <button type="button" style={{ width: "45%" }} class="inline-flex items-center justify-center  mt-6 text-gray-900 hover:text-black border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-black dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"><FiMail ></FiMail>VIA EMAIL</button>
+            <button type="button"  class="btn2 inline-flex items-center justify-center  mt-6 text-white bg-yellow-600 hover:bg-yellow-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-700 dark:border-yellow-700"><FiMail></FiMail>VIA EMAIL FORM</button>
             
           </div>
           
           <div className="formdiv grid md:grid-cols-2 md:gap-6 sm:grid-cols-1 sm:gap-12" >
-          <form className="mb-6 group mt-4 mr-14 "style={{ width: "90%" }} onSubmit={handleSubmit}>
+          <form className="mb-6 group mt-4 mr-14 "style={{ width: "90%" , color:"white", fontSize:"12px"}} onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="fName"
+            <label className="text-black" htmlFor="fName"
             >
               FIRST NAME
             </label>
@@ -75,14 +75,14 @@ function ContactPage() {
             />
              <div>
               <div className="flex flex-col items-end">
-                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-black rounded-full">
                 {firstName.length}/{characterLimit}
                 </span>
              </div>
               
             </div>
           </div>
-          <div>
+          <div className="text-black">
             <label htmlFor="lastName">LAST NAME</label>
             <input
               type="text"
@@ -95,13 +95,13 @@ function ContactPage() {
          
               <div>
               <div className="flex flex-col items-end">
-                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-black  rounded-full">
                 {lastName.length}/{characterLimit}
                 </span>
              </div>
             </div>
           </div>
-          <div>
+          <div className="text-black">
             <label htmlFor="phone">PHONE:</label>
             <input
               type="text"
@@ -113,7 +113,7 @@ function ContactPage() {
             />
             <div>
               <div className="flex flex-col items-end">
-                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-black  rounded-full">
                 {phone.length}/{characterLimit}
                 </span>
              </div>
@@ -121,7 +121,7 @@ function ContactPage() {
             </div>
             
           </div>
-          <div>
+          <div className="text-black">
             <label htmlFor="email">EMAIL</label>
             <input
               type="text"
@@ -133,13 +133,13 @@ function ContactPage() {
             />
             <div>
               <div className="flex flex-col items-end">
-                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-black  rounded-full">
                 {email.length}/{characterLimit}
                 </span>
              </div>
             </div>
           </div>
-          <div>
+          <div className="text-black">
             <label htmlFor="feedback">FEEDBACK</label>
             <input
             className="h-32"
@@ -153,13 +153,13 @@ function ContactPage() {
             />
             <div>
               <div className="flex flex-col items-end">
-                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                <span className="inline-flex justify-items-end  justify-center w-10 h-4  text-xs font-semibold text-black  rounded-full">
                 {feedback.length}/{characterLimit}
                 </span>
              </div>
             </div>
           </div>
-          <button type="submit">Submit</button>
+          <button type="button" className="text-white bg-yellow-600 hover:bg-yellow-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-700 dark:border-yellow-700">SUBMIT</button>
         </form>
         <div className="mb-6 group map"style={{width:"40%",height:"60px"}}>
     
