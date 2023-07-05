@@ -1,12 +1,13 @@
 import React from 'react'
-import First from '../../Components/home/First'
-import Second from '../../Components/home/Second'
-import Third from '../../Components/home/Third'
-import Fourth from '../../Components/home/Fourth'
-import Fifth from '../../Components/home/Fifth'
-import Sixth from '../../Components/home/Sixth'
-import Footer from '../../Components/home/Footer'
+
 import './Home.css'
+import First from '../../Components/home/First'
+import Second from '../../components/Home/Second'
+import Third from '../../Components/home/Third'
+import Fourth from '../../components/Home/Fourth'
+import Fifth from '../../components/Home/Fifth'
+import Sixth from '../../components/Home/Sixth'
+import Footer from '../../components/Home/Footer'
 
 
 
@@ -16,14 +17,14 @@ const Home = () => {
     <div className='home'>
     
 <First/>
-<Second/>
-<Third/>
-<Fourth/>
-<Fifth/>
-<Sixth/>
-<Footer/>
 
-    
+
+    <Second/>
+    <Third/>
+    <Fourth/>
+    <Fifth/>
+    <Sixth/>
+   <Footer/>
 
     
     </div>
