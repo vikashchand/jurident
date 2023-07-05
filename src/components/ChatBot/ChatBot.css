@@ -1,23 +1,30 @@
 .chat-bar-collapsible {
     position: fixed;
     bottom: 0px;
-    right: 0px;
+    right: 100px;
+   
     
 }
 
+.chat-bar-collapsible.expanded {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    z-index: 999;
+  }
+
 .collapsible {
-    background-color: rgb(255, 157, 82);
-    color: rgb(11, 9, 9);
+  
+    
     cursor: pointer;
     padding: 18px;
     width: 30px;
     height: 30px;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    border-radius: 50%;
-    border: 3px solid white;
-    border-bottom: none;
+    
+    font-size: 60px;
+    border-radius: 20%;
+    color: #69d536;
+   
 }
 
 .content {
@@ -156,21 +163,20 @@
 }
 
 @media screen and (max-width:600px) {
-    .full-chat-block {
-        width: 100%;
-        border-radius: 0px;
-    }
+    
+
     .chat-bar-collapsible {
         position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 80%;
+        bottom: 0px;
+        right: 50px;
+       
+        
     }
     
-    .collapsible {
-        width: 100%;
-        border: 0px;
-        border-top: 3px solid rgb(13, 1, 1);
-        border-radius: 0px;
-    }
+    .chat-bar-collapsible.expanded {
+        position: fixed;
+        top: 200px;
+        right: 20px;
+        z-index: 999;
+      }
 }

@@ -10,7 +10,7 @@ const Faq = () => {
       <h1 className="faq2">Frequently Asked Questions</h1>
       <div className="accordion">
         {accordionData.map(({ title, content }) => (
-          <Accordion title={title} content={content} />
+          <Accordion key={title} title={title} content={content} />
         ))}
       </div>
     </div>
