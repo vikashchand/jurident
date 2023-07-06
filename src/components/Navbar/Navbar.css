@@ -43,11 +43,13 @@
   }
   
   .navbar-logo {
-    color: #0e0b0b;
+    color: #C99F4A;
     justify-self: left;
     cursor: pointer;
     text-decoration: none;
-    font-size: rem;
+    font-size: 2rem;
+  font-weight: 900;
+    font-family: Satoshi;
     display: flex;
     align-items:center;
   }

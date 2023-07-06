@@ -33,17 +33,19 @@
     transition: max-height 0.2s ease-out;
     background-color: #001518;
     border-radius: 5px;
+   
 }
 
 .full-chat-block {
     width: 350px;
-    background: rgb(255, 122, 122);
+    background: white;
     text-align: center;
     overflow: auto;
     scrollbar-width: none;
     height: max-content;
     transition: max-height 0.2s ease-out;
     border-radius: 8px;
+    border: 2px solid black;
 }
 
 .outer-container {
@@ -70,10 +72,10 @@
     display: flex;
     float: left;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     align-items: center;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px 10px 0px 0px;
     padding: 10px 0px 10px 10px;
 }
@@ -99,7 +101,7 @@
 
 .input-box {
     float: left;
-    border: none;
+    border: 2px solid black;
     box-sizing: border-box;
     width: 100%;
     border-radius: 10px;
@@ -122,7 +124,7 @@
 .userText span {
     line-height: 1.5em;
     display: inline-block;
-    background: #6483a6;
+    background: #C99F4A;
     padding: 10px;
     border-radius: 8px;
     border-bottom-right-radius: 2px;

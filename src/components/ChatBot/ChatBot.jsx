@@ -76,6 +76,8 @@ const ChatBot = () => {
     }
   };
 
+  //<h5 className="chat-timestamp">{message.timestamp}</h5>
+
   return (
     <div className={`chat-bar-collapsible ${isExpanded ? 'expanded' : ''}`}>
       <button
@@ -96,7 +98,7 @@ const ChatBot = () => {
                 <div id="chatbox">
                   {chatMessages.map((message) => (
                     <div key={message.id}>
-                      <h5 className="chat-timestamp">{message.timestamp}</h5>
+
                       <p
                         className={message.sender === 'bot' ? 'botText' : 'userText'}
                       >
