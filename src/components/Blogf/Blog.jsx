@@ -1,14 +1,15 @@
 import React, { Fragment } from "react";
-import BlogNavbar from "./BlogNavbar";
+
 import Footer from "./Footer";
 import BlogContent from "./BlogContent";
 import BlogIntro from "./BlogIntro";
+import Navbar from "./layout/Navbar";
 
 const Blog = () => {
   return (
     <div>
       <Fragment>
-        <BlogNavbar />
+       <Navbar/>
         <BlogIntro />
         <BlogContent />
         <Footer />

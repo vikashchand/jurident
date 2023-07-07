@@ -1,70 +1,79 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Verdana, Geneva, Tahoma, */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Verdana, Geneva, Tahoma, */
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.faq1,
+.faq2 {
+  text-align: left;
+  margin: 1.5rem auto;
+  max-width: 80%;
+
+  text-align: left;
+  max-width: 80%;
+}
+
+.faq1 {
+  font-size: 1em;
+  font-family: Verdana;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.faq2 {
+  font-size: 2em;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.accordion {
+  max-width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-items {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  background-color: #c99f4a;
+  font-size: medium;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+}
+
+.accordion-title {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.icons {
+  color: #fff;
+}
+
+.accordion-content {
+  font-size: 1rem;
+  padding-top: 0.75rem;
+}
+
+@media screen and (max-width: 700px) {
   body {
-    font-family: sans-serif;
-    font-size: 20px;
+    font-size: 18px;
   }
-  
-  h1 {
-    text-align: left;
-    margin: 1.5rem auto;
-    max-width: 80%;
-  }
-  
-  .faq1 {
-    margin-bottom: 0.5rem;
-    font-family: Verdana;
-  }
-  
-  .faq2 {
-    margin-top: 0;
-    font-weight: normal;
-  }
-  
+
   .accordion {
-    max-width: 80%;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
+    width: 90%;
   }
-  
-  .accordion-item {
-    margin-bottom: 1.5rem;
-    color: #fff;
-    background-color: #000;
-    font-size: medium;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-  }
-  
-  .accordion-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    cursor: pointer;
-    background-color: #000;
-    /* padding: 0.25rem 0; */
-    font-size: 1.25rem;
-    font-weight: normal;
-  }
-  
-  .accordion-content {
-    font-size: 1rem;
-    padding-top: 0.75rem;
-  }
-  
-  @media screen and (max-width: 700px) {
-    body {
-      font-size: 18px;
-    }
-  
-    .accordion {
-      width: 90%;
-    }
-  }
-  
+}

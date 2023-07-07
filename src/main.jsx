@@ -13,7 +13,7 @@ root.render(
       redirect_uri: window.location.origin
     }}
   >
-  <React.StrictMode>
+  <React.StrictMode> 
 
 
   <App />
