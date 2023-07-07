@@ -21,10 +21,10 @@ function MyFooter() {
       </div>
       <div className="d-flex">
         <a href="" class="text-dark">
-          <FaArrowLeft size="2rem"></FaArrowLeft>
+          {/* <FaArrowLeft size="2rem"></FaArrowLeft> */}
         </a>
         <a href="" class="text-dark">
-          <FaArrowRight size="2rem"></FaArrowRight>
+          {/* <FaArrowRight size="2rem"></FaArrowRight> */}
         </a>
       </div>
     </div>
