@@ -5,7 +5,7 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 
 const Blogs = () => {
   return (
-    <div className="d-flex mx-2 px-4 mt-5">
+    <div className="blog-overall mx-2 px-4 mt-5">
       <div className="d-flex flex-column">
         {BlogData.map((blog) => (
           <BlogItem key={blog.id} blog={blog} />
