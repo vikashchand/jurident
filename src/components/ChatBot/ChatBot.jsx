@@ -3,6 +3,8 @@ import './ChatBot.css';
 import { BiSend } from 'react-icons/bi';
 import { BsChatDotsFill } from 'react-icons/bs';
 
+import {BsRobot} from 'react-icons/bs'
+
 const ChatBot = () => {
   const [chatMessages, setChatMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
@@ -93,6 +95,7 @@ const ChatBot = () => {
       {isExpanded && (
         <div className="content">
           <div className="full-chat-block">
+          <div className='titlebot'> <BsRobot/>  Jurident Bot  </div>
             <div className="outer-container">
               <div className="chat-container">
                 <div id="chatbox">
