@@ -13,7 +13,7 @@ const Fourth = () => {
             window.removeEventListener("resize", updateDimension);
         };
     }, [screenSize]);
-    if (screenSize > 1280) {
+    if (screenSize > 1200) {
         return (
             <div className="absolute top-[3066px] bg-black text-white h-[1024px] w-full z-0 ">
                 <img

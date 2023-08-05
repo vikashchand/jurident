@@ -12,7 +12,7 @@ const Fifth = () => {
             window.removeEventListener("resize", updateDimension);
         };
     }, [screenSize]);
-    if (screenSize > 1280) {
+    if (screenSize > 1200) {
         return (
             <div className="absolute top-[4090px] h-[1024px] w-[100%] ">
                 <img
