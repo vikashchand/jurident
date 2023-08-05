@@ -14,7 +14,7 @@ const First = () => {
             window.removeEventListener("resize", updateDimension);
         };
     }, [screenSize]);
-    if (screenSize > 1280) {
+    if (screenSize > 1200) {
         return (
             <div>
                 <img
@@ -56,17 +56,17 @@ const First = () => {
                     <h1 className="text-6xl font-bold text-center text-gray-800">
                         Jurident
                     </h1>
-                    <h2 className="mt-4 text-3xl font-semibold text-center text-gray-800">
+                    <h2 className="mt-4 text-xl font-semibold text-center text-gray-800">
                         Empowering Justice, Protecting Rights
                     </h2>
                     <div className="flex items-center justify-center mt-8 space-x-4">
-                        <div className="flex items-center justify-center w-96 h-16 border-2 border-gray-800 rounded-md">
+                        <div className="flex items-center justify-center w-75 h-16 border-2 border-gray-800 rounded-md">
                             <GrLocation className="w-6 h-6" />
                             <h3 className="ml-4 text-xl font-medium text-gray-800">
                                 Search for a city
                             </h3>
                         </div>
-                        <button className="px-4 py-2 text-xl font-medium text-gray-800 border-2 border-gray-800 rounded-md">
+                        <button className="px-4 py-2 text-md font-medium text-gray-800 border-2 border-gray-800 rounded-md">
                             Detect Location
                         </button>
                     </div>

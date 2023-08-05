@@ -16,7 +16,7 @@ const Sixth = () => {
             window.removeEventListener("resize", updateDimension);
         };
     }, [screenSize]);
-    if (screenSize > 1280) {
+    if (screenSize > 1200) {
         return (
             <div className="absolute top-[5114px] bg-black text-white h-[1024px] w-full   ">
                 <h1 className="absolute mt-[188px] ml-[162px] w-[875px] h-[196px] font-medium text-[30px] leading-[70px]">

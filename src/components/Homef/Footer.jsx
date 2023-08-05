@@ -13,7 +13,7 @@ const Footer = () => {
             window.removeEventListener("resize", updateDimension);
         };
     }, [screenSize]);
-    if (screenSize > 1280) {
+    if (screenSize > 1200) {
         return (
             <div className="absolute top-[6138px] h-[900px] w-[100%]">
                 <h1 className="w-[202px] h-[30px] ml-[162px] mt-[145px] text-[40px] font-bold">
@@ -69,7 +69,7 @@ const Footer = () => {
                             href="mailto:Support.lorem@gmail.com"
                             className=" text-[25px]"
                         >
-                            Support.lorem@gmail.com
+                            lorem@gmail.com
                         </a>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ const Footer = () => {
                             href="mailto:Support.lorem@gmail.com"
                             className=" text-[25px] md:text-[18px]"
                         >
-                            Support.lorem@gmail.com
+                            lorem@gmail.com
                         </a>
                     </div>
                 </div>
