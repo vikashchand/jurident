@@ -1,5 +1,5 @@
 import React from "react";
-import FormChangePassword from "./ChangePassBox";
+import ChangePassBox from "./ChangePassBox";
 import ProfileBox from "./ProfileBox";
 const ChangePass_Page = () => {
   return (
@@ -7,12 +7,12 @@ const ChangePass_Page = () => {
       <header className="bg-white border-b border-black text-center text-black">
         <h1 className="text-2xl py-4">Your Header Text</h1>
       </header>
-      <div className="flex w-screen space-x-20 justify-center">
-        <div className="w-3/10">
+      <div className="flex flex-wrap w-full space-x-20 justify-center">
+        <div className="lg:w-3/10 sm:w-full mb-4 ">
           <ProfileBox />
         </div>
-        <div className="w-7/10 ">
-          <FormChangePassword />
+        <div className="w-7/10 sm:w-full ">
+          <ChangePassBox/>
         </div>
       </div>
     </>
