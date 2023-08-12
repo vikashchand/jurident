@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const ChangePassBox = () => {
+  const navigate=useNavigate();
   const [passwords, setPasswords] = useState({
     currentPassword: "",
     newPassword: "",
@@ -20,6 +21,7 @@ const ChangePassBox = () => {
   };
   const EditProfile = () => {
     console.log("Edit profile clicked");
+    navigate('/profile');
   };
   const SaveChanges = () => {
     console.log("Save Changes clicked");
@@ -29,7 +31,7 @@ const ChangePassBox = () => {
   };
   return (
     <>
-      <div className="w-full m-10 bg-zinc-200 p-6 rounded-lg shadow-lg font-mono">
+      <div className="w-full m-0 bg-zinc-200 p-6 rounded-lg shadow-lg font-mono">
         <h2 className="font-bold mb-1">Change Password</h2>
         <p className=" text-zinc-400 mb-1">
           Please Note Changing password would require again login to app
@@ -99,19 +101,19 @@ const ChangePassBox = () => {
       </div>
       <div className=" w-full m-10 flex flex-col justify-center items-center space-y-8 font-mono">
         <button
-          className="bg-white border-2  border-black text-black px-4 py-2 rounded-md w-44 font-bold hover:bg-black hover:text-white"
+          className="bg-white border-2  border-black text-black px-4 py-2 rounded-md w-44 font-bold hover:bg-black hover:text-slate-500"
           onClick={EditProfile}
         >
           Edit Profile
         </button>
         <button
-          className="bg-white border-2 border-black text-black px-4 py-2 rounded-md w-44 font-bold hover:bg-black hover:text-white"
+          className="bg-white border-2 border-black text-black px-4 py-2 rounded-md w-44 font-bold hover:bg-black hover:text-slate-500"
           onClick={SaveChanges}
         >
           Save Changes
         </button>
         <button
-          className="bg-white border-2 border-black text-black px-4 py-2 rounded-md w-44 font-bold hover:bg-black hover:text-white"
+          className="bg-white border-2 border-black text-black px-4 py-2 rounded-md w-44 font-bold hover:bg-black hover:text-slate-500"
           onClick={DiscardChanges}
         >
           Discard Changes
