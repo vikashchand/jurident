@@ -12,7 +12,6 @@ const app = initializeApp(firebaseConfig);
 // Providers
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
-const appleProvider = new OAuthProvider('apple.com');
 const twitterProvider = new TwitterAuthProvider();
 
 // Custom Parameters
@@ -30,7 +29,6 @@ export const auth = getAuth();
 // Function for signIn
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 export const signInWithFacebook = () => signInWithPopup(auth, facebookProvider);
-export const signInWithApple = () => signInWithPopup(auth, appleProvider);
 export const signInWithTwitter = () => signInWithPopup(auth, twitterProvider);
 
 export const db = getFirestore();
