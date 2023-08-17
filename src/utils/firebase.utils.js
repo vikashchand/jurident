@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, OAuthProvider, TwitterAuthProvider } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -8,14 +8,28 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const googleProvider = new GoogleAuthProvider();
 
+// Providers
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+
+// Custom Parameters
 googleProvider.setCustomParameters({
     prompt: 'select_account',
 });
 
+facebookProvider.setCustomParameters({
+    'display': 'popup'
+});
+
+
 export const auth = getAuth();
+
+// Function for signIn
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithFacebook = () => signInWithPopup(auth, facebookProvider);
+export const signInWithTwitter = () => signInWithPopup(auth, twitterProvider);
 
 export const db = getFirestore();
 
