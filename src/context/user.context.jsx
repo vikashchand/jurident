@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserDocumentFromAuth, onAuthStateChangedListner } from "../firebase/firebase.utils";
+import { createUserDocumentFromAuth, onAuthStateChangedListner } from "../utils/firebase.utils";
 
 
 // The actual value that is required to be accessed
