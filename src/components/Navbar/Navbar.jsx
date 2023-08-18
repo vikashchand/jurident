@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
 import { GiRocketThruster } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const { loginWithRedirect, logout, isAuthenticated,user } = useAuth0();
-  
-
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
   return (
     <>
@@ -30,20 +27,19 @@ function Navbar() {
               {click ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={click ? "nav-menu active" : "nav-menu"}>
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  Home
+                </NavLink>
+              </li>
 
-            <li className="nav-item">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                "nav-links" + (isActive ? " activated" : "")
-              }
-              onClick={closeMobileMenu}
-            >
-              Home
-            </NavLink>
-          </li>
-  
-                  <li className="nav-item">
+              <li className="nav-item">
                 <NavLink
                   to="/Services"
                   className={({ isActive }) =>
@@ -55,7 +51,6 @@ function Navbar() {
                 </NavLink>
               </li>
 
-              
               <li className="nav-item">
                 <NavLink
                   to="/Blogs"
@@ -67,7 +62,6 @@ function Navbar() {
                   Blogs
                 </NavLink>
               </li>
-
 
               <li className="nav-item">
                 <NavLink
@@ -81,7 +75,6 @@ function Navbar() {
                 </NavLink>
               </li>
 
-              
               <li className="nav-item">
                 <NavLink
                   to="/About"
@@ -94,45 +87,39 @@ function Navbar() {
                 </NavLink>
               </li>
 
-            
-             
-              
-               {isAuthenticated ? (
+              {isAuthenticated ? (
                 <li className="navbar-container">
-                <NavLink
-                  to="/profilee"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                 
-                  <img className="image" src={user.picture} alt={user.name} /> 
-                </NavLink>
-                <li className="nav-item">
-                <button className="btn" onClick={() => logout({ returnTo: window.location.origin })}>
-                  Log Out
-                </button>
-                
+                  <NavLink
+                    to="/profilee"
+                    className={({ isActive }) =>
+                      "nav-links" + (isActive ? " activated" : "")
+                    }
+                    onClick={closeMobileMenu}
+                  >
+                    <img className="image" src={user.picture} alt={user.name} />
+                  </NavLink>
+                  <li className="nav-item">
+                    <button
+                      className="btn"
+                      onClick={() =>
+                        logout({ returnTo: window.location.origin })
+                      }
+                    >
+                      Log Out
+                    </button>
+                  </li>
                 </li>
-               
-              </li>
-          
-              
-
               ) : (
-                <button className="btn" onClick={loginWithRedirect}>
+                <NavLink
+                  to="/login"
+                  className="btn"
+                  // onClick={loginWithRedirect}
+                >
                   Login
-                </button>
+                </NavLink>
               )}
-              
-
-                
             </ul>
-            
-            
           </div>
-         
         </nav>
       </IconContext.Provider>
     </>
