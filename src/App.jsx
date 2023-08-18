@@ -20,6 +20,7 @@ import {articles} from './components/News/data'
 import { Terms_and_Condition } from "./components/Profile/Terms_and_Conditions";
 import { Profile } from "./components/Profile/Profile";
 import ChangePass_Page from "./components/Profile/ChangePass_Page";
+import Login from "./Screen/Loginscreen/Login/Login";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
 
           <Route path="/Services" element={<Services />} />
           <Route path="/About" element={<About />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/News" element={<News />} />
           <Route path="/profile/about" element={<About_Us_Page />} />
           <Route exact path="/Blogs" element={<Blogs />} />

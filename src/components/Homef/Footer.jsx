@@ -85,10 +85,10 @@ const Footer = () => {
     } else {
         return (
             <div className="absolute  h-[900px] w-[100%]">
-                <h1 className="w-[202px] h-[30px] ml-[162px] mt-[145px] text-[40px] font-bold">
+                <h1 className="w-[202px] h-[30px] ml-[150px] mt-[145px] text-[40px] font-bold">
                     JURIDENT
                 </h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 ml-[160px] mt-[87px]">
+                <div className="grid grid-cols-1  ml-[100px] mt-[87px]">
                     <ul className="text-[30px] md:text-[20px]">
                         <li>
                             <Link to="/">Our Services</Link>
@@ -154,12 +154,13 @@ const Footer = () => {
                 </div>
 
                 <div className="text-[30px] mt-[30px]">
-                    <h3 className="inline font-light ml-[160px] md:ml-0">
+                    <h3 className="inline font-light ml-[100px] md:ml-0">
                         Copyrights{" "}
+                       
                     </h3>
-                    <h3 className="inline mt-2 md:mt-0 float-right md:float-none">
-                        India
-                    </h3>
+                    <h3> <br></br>
+                    India</h3>
+                    
                 </div>
             </div>
         );

@@ -1,0 +1,255 @@
+#main {
+  margin: 55px;
+  margin-top: 20px;
+  display: flex;
+}
+
+#login-intro {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+#form {
+  margin-left: 65px;
+  width: 50%;
+}
+
+.login {
+  width: 500px;
+  color: #050125;
+}
+
+input[type="text"] {
+  border: solid 3px #050125;
+  border-radius: 5px;
+}
+
+#rememberMe {
+  display: flex;
+  height: 30px;
+  width: auto;
+}
+
+#rememberText {
+  margin-left: 28px;
+  padding: 0px;
+}
+
+#rememberMain {
+  font-size: 19px;
+}
+
+#rememberSub {
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  border: solid 3px #050125;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+  background-color: #050125;
+  color: white;
+}
+
+#seperator {
+  margin-top: 18px;
+  display: flex;
+}
+
+#line {
+  background: #050125;
+  width: 50%;
+  height: 1px;
+  margin-top: 19px;
+  padding-left: 2px;
+  padding-right: 15px;
+}
+
+#signup-option {
+  padding: 20px;
+  margin-left: 35px;
+}
+
+#signup {
+  color: #c99f4a;
+}
+
+.googleLog {
+  border: solid 3px #050125;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+}
+
+.facebookLog {
+  border: solid 3px #1877f2;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+  background: #1877f2;
+  color: white;
+}
+
+#info {
+  width: 50%;
+  text-align: center;
+}
+
+#login-info-main {
+  margin-top: 18px;
+  font-size: 35px;
+}
+
+#login-info-secondary {
+  margin-top: 18px;
+  font-size: 22px;
+}
+
+#login-img {
+  margin-top: 38px;
+  background: #eeeeee;
+  height: 55%;
+  width: 100%;
+}
+
+.validation {
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: red;
+}
+
+
+ 
+
+@media (max-width: 768px) {
+
+
+
+  #main {
+    margin: 0px;
+    margin-top: 10px;
+    display: flex;
+  }
+  
+  #login-intro {
+    font-weight: 600;
+    font-size: 25px;
+  }
+  
+  #form {
+    margin-left: 0px;
+    width: 100%;
+  }
+  
+  .login {
+    width: 100%;
+    color: #050125;
+  }
+  
+  input[type="text"] {
+    border: solid 3px #050125;
+    border-radius: 5px;
+  }
+  
+  #rememberMe {
+    display: flex;
+    height: 30px;
+    width: auto;
+  }
+  
+  #rememberText {
+    margin-left: 28px;
+    padding: 0px;
+  }
+  
+  #rememberMain {
+    font-size: 19px;
+  }
+  
+  #rememberSub {
+    font-size: 14px;
+  }
+  
+  input[type="submit"] {
+    border: solid 3px #050125;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+    background-color: #050125;
+    color: white;
+  }
+  
+  #seperator {
+    margin-top: 18px;
+    display: flex;
+  }
+  
+  #line {
+    background: #050125;
+    width: 50%;
+    height: 1px;
+    margin-top: 19px;
+    padding-left: 2px;
+    padding-right: 15px;
+  }
+  
+  #signup-option {
+    padding: 20px;
+    margin-left: 35px;
+  }
+  
+  #signup {
+    color: #c99f4a;
+  }
+  
+  .googleLog {
+    border: solid 3px #050125;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+  }
+  
+  .facebookLog {
+    border: solid 3px #1877f2;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+    background: #1877f2;
+    color: white;
+  }
+  
+  #info {
+   display: none;
+  }
+  
+  #login-info-main {
+ display: none;
+  }
+  
+  #login-info-secondary {
+    display: none;
+  }
+  
+  #login-img {
+    display: none;
+  }
+  
+  .validation {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: red;
+
+    z-index: 99999;
+  }
+  
+  
+   
+
+}

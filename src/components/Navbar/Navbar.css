@@ -35,10 +35,8 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 50px;
-    padding-left: 50px;
+    
+   
     width: 100%;
   }
   
@@ -67,13 +65,16 @@
     justify-content: center;
     list-style: none;
     text-align: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
   
   .nav-item {
-    height: 40px;
-    border-bottom: 2px solid transparent;
-    padding: 2rem;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0rem;
+    margin: 2rem;
+
   }
   
   .nav-item:hover {
@@ -132,7 +133,8 @@
     }
   
     .nav-menu.active {
-      background: #e8e8ed;
+      background-color: #09bef0 #bfbfff;
+    
       left: 0;
       opacity: 1;
       transition: all 0.6s ease;
@@ -158,6 +160,9 @@
     }
   
     .nav-item {
+     
+      
+      margin: 0;
       width: 100%;
     }
   
