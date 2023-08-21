@@ -1,68 +1,117 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signInWithFacebook, signInWithGooglePopup } from "../../utils/firebase.utils";
+
+const defaultFormFields = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+};
 
 const RegistrationForm = () => {
-  let validator = true;
-  const login = async (e) => {
-    e.preventDefault();
 
-    let user = {
-      email: e.target[0].value,
-      password: e.target[1].value,
-    };
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { firstName,lastName, email, password, confirmPassword } = formFields;
 
-    const isValid = await userSchema.isValid(user);
-    validator = isValid;
-    console.log(validator);
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert('passwords do not match');
+      return;
+    }
+
+    try {
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      await createUserDocumentFromAuth(user, { firstName , lastName });
+      resetFormFields();
+    } catch (error) {
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Cannot create user, email already in use');
+      } else {
+        console.log('user creation encountered an error', error);
+      }
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormFields({ ...formFields, [name]: value });
+  };
+
+  let validator = true;
+  
+
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup();
+  };
+
+  const signInWithFB = () => {
+    signInWithFacebook();
+  };
+
   return (
     <div id="form">
       <div className="w-full max-w-xs">
-        <form className="bg-white px-8 pt-6 pb-8 mb-4 login" onSubmit={login}>
+        <form className="bg-white px-8 pt-6 pb-8 mb-4 login" onSubmit={handleSubmit}>
           <h3 id="login-intro">Create an account</h3>
           <br />
-          <button className="googleLog">Continue with Google</button>
-          <button className="facebookLog">Continue with Facebook</button>
+          <button className="googleLog" onClick={signInWithGoogle}>Continue with Google</button>
+          <button className="facebookLog" onClick={signInWithFB}>Continue with Facebook</button>
           <div id="seperator" className="mb-4">
             <div id="line"></div> or <div id="line"></div>
           </div>
           <div style={{ display: 'flex' }}>
             <div className="pr-2 mb-4">
-            <input
-              className="border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="First Name"
-            />
-            <p className="validation">
-              {validator ? "" : "Email format incorrect"}
-            </p>
+              <input
+                className="border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="username"
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+                name="firstName"
+                value={firstName}
+              />
+              
+            </div>
+            <div className="pl-2 mb-4">
+              <input
+                className="border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="username"
+                type="text"
+                placeholder="Last Name"
+                onChange={handleChange}
+                name="lastName"
+                value={lastName}
+              />
+              
+            </div>
           </div>
-          <div className="pl-2 mb-4">
-            <input
-              className="border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Last Name"
-            />
-            <p className="validation">
-              {validator ? "" : "Email format incorrect"}
-            </p>
-          </div>
-    </div>
 
-          
-          
+
+
           <div className="mb-4">
             <input
               className="border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
               placeholder="Email"
+              onChange={handleChange}
+              name="email"
+              value={email}
             />
-            <p className="validation">
-              {validator ? "" : "Email format incorrect"}
-            </p>
+            
           </div>
           <div className="mb-4">
             <input
@@ -70,10 +119,11 @@ const RegistrationForm = () => {
               id="username"
               type="text"
               placeholder="Password"
+              onChange={handleChange}
+              name="password"
+              value={password}
             />
-            <p className="validation">
-              {validator ? "" : "Email format incorrect"}
-            </p>
+           
           </div>
           <div className="mb-4">
             <input
@@ -81,10 +131,10 @@ const RegistrationForm = () => {
               id="username"
               type="text"
               placeholder="Confirm Password"
+              onChange={handleChange}
+              name="confirmPassword"
+              value={confirmPassword}
             />
-            <p className="validation">
-              {validator ? "" : "Email format incorrect"}
-            </p>
           </div>
           <div className="flex items-center justify-between">
             <input className="login-btn" type="submit" value={"Create Account"} />
