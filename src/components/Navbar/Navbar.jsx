@@ -13,7 +13,6 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const { loginWithRedirect, logout, isAuthenticated,user } = useAuth0();
   
 
 
@@ -104,6 +103,17 @@ function Navbar() {
               onClick={closeMobileMenu}
             >
               Login
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/register"
+              className={({ isActive }) =>
+                "nav-links" + (isActive ? " activated" : "")
+              }
+              onClick={closeMobileMenu}
+            >
+              Register
             </NavLink>
           </li>
           
