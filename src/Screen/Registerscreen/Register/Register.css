@@ -1,0 +1,153 @@
+#main {
+  margin: 55px;
+  margin-top: 20px;
+  display: flex;
+}
+
+
+
+#form {
+  margin-left: 65px;
+  width: 50%;
+}
+
+
+
+
+
+input[type="submit"] {
+  border: solid 3px #050125;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+  background-color: #050125;
+  color: white;
+}
+
+#seperator {
+  margin-top: 18px;
+  display: flex;
+}
+
+#line {
+  background: #050125;
+  width: 50%;
+  height: 1px;
+  margin-top: 19px;
+  padding-left: 2px;
+  padding-right: 15px;
+}
+
+
+
+
+.googleLog {
+  border: solid 3px #050125;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+}
+
+.appleLog {
+  border: solid 3px #050125;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  margin-top: 18px;
+  background-color: black;
+  color: white;
+}
+
+#info {
+  width: 50%;
+  text-align: center;
+}
+
+
+
+#login-img {
+  margin-top: 38px;
+  background: #eeeeee;
+  height: 55%;
+  width: 100%;
+}
+
+
+ 
+
+@media (max-width: 768px) {
+
+
+
+  #main {
+    margin: 0px;
+    margin-top: 10px;
+    display: flex;
+  }
+  
+  
+  #form {
+    margin-left: 0px;
+    width: 100%;
+  }
+  
+  input[type="text"] {
+    border: solid 3px #050125;
+    border-radius: 5px;
+  }
+ 
+  
+  input[type="submit"] {
+    border: solid 3px #050125;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+    background-color: #050125;
+    color: white;
+  }
+  
+  #seperator {
+    margin-top: 18px;
+    display: flex;
+  }
+  
+  #line {
+    background: #050125;
+    width: 50%;
+    height: 1px;
+    margin-top: 19px;
+    padding-left: 2px;
+    padding-right: 15px;
+  }
+  
+  
+  
+  .appleLog {
+    border: solid 3px #1877f2;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+    background: #1877f2;
+    color: white;
+  }
+  
+  #info {
+   display: none;
+  }
+  
+ 
+  
+  #login-img {
+    display: none;
+  }
+  
+
+  
+  
+   
+
+}
