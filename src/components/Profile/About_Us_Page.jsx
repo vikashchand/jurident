@@ -4,18 +4,17 @@ import ProfileBox from './ProfileBox'
 
 const About_Us_Page = () => {
   return (
-    <div>
-        
-     
-        <div className="float-right mr-[5%] mt-[0%]">
-            <AboutusBox />
-        </div>
+    <div className='flex flex-wrap justify-center  mt-5 mx-5 lg:space-x-20'>
 
-        <div className="w-[30%] mt-[5%] block">
-            <ProfileBox />
-        </div>
-
+    <div className="lg:w-1/3 sm:w-full mb-4 lg:mb-0  ">
+        <ProfileBox />
     </div>
+
+    <div className="lg:w-1/2  sm:w-full mb-4">
+        <AboutusBox />
+    </div>
+</div>
+
   )
 }
 
