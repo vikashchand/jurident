@@ -1,25 +1,69 @@
 import React from "react";
 import { userSchema } from "../../Screen/Loginscreen/validations/LoginValidation";
 import { Link } from "react-router-dom";
+import { signInAuthUserWithEmailAndPassword, signInWithFacebook, signInWithGooglePopup } from "../../utils/firebase.utils";
+import { useState } from "react";
+
+const defaultFormFields = {
+  email: '',
+  password: ''
+};
+
 
 const LoginForm = () => {
-  let validator = true;
-  const login = async (e) => {
-    e.preventDefault();
 
-    let user = {
-      email: e.target[0].value,
-      password: e.target[1].value,
-    };
 
-    const isValid = await userSchema.isValid(user);
-    validator = isValid;
-    console.log(validator);
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { email, password } = formFields;
+
+  // console.log(formFields);
+
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  }
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup();
   };
+  const signInWithFB = () => {
+    signInWithFacebook();
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+
+    try {
+      const response = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      console.log(response);
+      resetFormFields();
+    } catch (error) {
+      switch (error.code) {
+        case 'auth/wrong-password':
+          alert('incorrect password for email');
+          break;
+        case 'auth/user-not-found':
+          alert('no user associated with this email');
+          break;
+        default:
+          console.log(error);
+      };
+    }
+
+  }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    // console.log(name, value);
+    setFormFields({ ...formFields, [name]: value })
+  }
+
   return (
     <div id="form">
       <div className="w-full max-w-xs">
-        <form className="bg-white px-8 pt-6 pb-8 mb-4 login" onSubmit={login}>
+        <form className="bg-white px-8 pt-6 pb-8 mb-4 login" onSubmit={handleSubmit}>
           <h3 id="login-intro">Log into your account</h3>
           <br />
           <div className="mb-4">
@@ -34,10 +78,11 @@ const LoginForm = () => {
               id="username"
               type="text"
               placeholder="johndoe@gmail.com"
+              onChange={handleChange}
+              name="email"
+              value={email}
             />
-            <p className="validation">
-              {validator ? "" : "Email format incorrect"}
-            </p>
+            
           </div>
           <div className="mb-6">
             <label
@@ -51,10 +96,11 @@ const LoginForm = () => {
               id="password"
               type="password"
               placeholder="* * * * *"
+              onChange={handleChange}
+              name="password"
+              value={password}
             />
-            <p className="validation">
-              {validator ? "" : "Password format incorrect"}
-            </p>
+            
             <div id="rememberMe">
               <input
                 className="border rounded"
@@ -79,8 +125,8 @@ const LoginForm = () => {
               Sign Up
             </Link>
           </div>
-          <button className="googleLog">Continue with Google</button>
-          <button className="facebookLog">Continue with Facebook</button>
+          <button className="googleLog" onClick={signInWithGoogle}>Continue with Google</button>
+          <button className="facebookLog" onClick={signInWithFB}>Continue with Facebook</button>
         </form>
       </div>
     </div>

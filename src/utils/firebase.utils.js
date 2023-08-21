@@ -1,21 +1,42 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore'
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore';
 
 const firebaseConfig = {
-    // Configuration to firebase app will come here
+    apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
+    authDomain: "jurident-case-details.firebaseapp.com",
+    projectId: "jurident-case-details",
+    storageBucket: "jurident-case-details.appspot.com",
+    messagingSenderId: "1001180279233",
+    appId: "1:1001180279233:web:7dbe7d738338827c50ff40",
+    measurementId: "G-NYKLT1EFGW"
 };
 
 const app = initializeApp(firebaseConfig);
 
+// Providers
 const googleProvider = new GoogleAuthProvider();
-
-googleProvider.setCustomParameters({
-    prompt: 'select_account',
-});
+const facebookProvider = new FacebookAuthProvider();
 
 export const auth = getAuth();
+
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+
+export const signInWithFacebook = () => {
+    signInWithRedirect(auth, facebookProvider);
+    getRedirectResult(auth)
+        .then((result) => {
+            const credential = FacebookAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = FacebookAuthProvider.credentialFromError(error);
+        });
+};
 
 export const db = getFirestore();
 
@@ -38,13 +59,12 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
     const userSnapshot = await getDoc(userDocRef);
 
     if (!userSnapshot.exists()) {
-        const { displayName, email } = userAuth;
+        const { email } = userAuth;
         const createdAt = new Date();
         try {
-            await setDoc(userDocRef, { displayName, email, createdAt, ...additionalInformation });
+            await setDoc(userDocRef, { email, createdAt, ...additionalInformation });
         } catch (error) {
             console.log('Error creating the user', error.message);
-
         }
     }
 
@@ -60,7 +80,7 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) { return; }
-    return signInWithEmailAndPassword(auth, email, password)
+    return signInWithEmailAndPassword(auth, email, password);
 }
 
 export const signOutUser = async () => await signOut(auth)
