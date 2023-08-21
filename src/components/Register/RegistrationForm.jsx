@@ -22,7 +22,7 @@ const RegistrationForm = () => {
           <h3 id="login-intro">Create an account</h3>
           <br />
           <button className="googleLog">Continue with Google</button>
-          <button className="appleLog">Continue with Apple</button>
+          <button className="facebookLog">Continue with Facebook</button>
           <div id="seperator" className="mb-4">
             <div id="line"></div> or <div id="line"></div>
           </div>

@@ -201,7 +201,7 @@
     
     .chat-bar-collapsible.expanded {
         position: fixed;
-        top: 100px;
+        top: 30px;
         right: 10px;
         z-index: 999;
       }
