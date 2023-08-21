@@ -1,35 +1,42 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, OAuthProvider, TwitterAuthProvider } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore'
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore';
 
 const firebaseConfig = {
-    // Configuration to firebase app will come here
+    apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
+    authDomain: "jurident-case-details.firebaseapp.com",
+    projectId: "jurident-case-details",
+    storageBucket: "jurident-case-details.appspot.com",
+    messagingSenderId: "1001180279233",
+    appId: "1:1001180279233:web:7dbe7d738338827c50ff40",
+    measurementId: "G-NYKLT1EFGW"
 };
 
 const app = initializeApp(firebaseConfig);
 
-
 // Providers
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
-const twitterProvider = new TwitterAuthProvider();
-
-// Custom Parameters
-googleProvider.setCustomParameters({
-    prompt: 'select_account',
-});
-
-facebookProvider.setCustomParameters({
-    'display': 'popup'
-});
-
 
 export const auth = getAuth();
 
-// Function for signIn
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
-export const signInWithFacebook = () => signInWithPopup(auth, facebookProvider);
-export const signInWithTwitter = () => signInWithPopup(auth, twitterProvider);
+
+export const signInWithFacebook = () => {
+    signInWithRedirect(auth, facebookProvider);
+    getRedirectResult(auth)
+        .then((result) => {
+            const credential = FacebookAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = FacebookAuthProvider.credentialFromError(error);
+        });
+};
 
 export const db = getFirestore();
 
