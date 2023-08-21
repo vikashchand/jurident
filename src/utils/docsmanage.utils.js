@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/user.context";
 const admin=require("firebase-admin");
+require('dotenv').config();
 
-const credentials=require("./key.json");
+
+const credentials=process.env;
 
 const user=useContext(UserContext);
 
