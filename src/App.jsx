@@ -17,6 +17,11 @@ import ChatBot from "./components/ChatBot/ChatBot";
 import About_Us_Page from "./components/Profile/About_Us_Page";
 import Navbar from "./components/Navbar/Navbar";
 import {articles} from './components/News/data'
+import { Terms_and_Condition } from "./components/Profile/Terms_and_Conditions";
+import { Profile } from "./components/Profile/Profile";
+import ChangePass_Page from "./components/Profile/ChangePass_Page";
+import Login from "./Screen/Loginscreen/Login/Login";
+import Register from "./Screen/Registerscreen/Register/Register"
 
 function App() {
   return (
@@ -50,11 +55,17 @@ function App() {
 
           <Route path="/Services" element={<Services />} />
           <Route path="/About" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/News" element={<News />} />
-          <Route path="/profilee" element={<About_Us_Page />} />
+          <Route path="/profile/about" element={<About_Us_Page />} />
           <Route exact path="/Blogs" element={<Blogs />} />
           <Route exact path="/Blogs/:topic" element={<Blog />} />
           <Route path="/Contact" element={<ContactPage />} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile/terms" element={<Terms_and_Condition/>} />
+          <Route path="/profile/about" element={<About_Us_Page/>} />
+          <Route path="/profile/changepassword" element={<ChangePass_Page/>} />
         </Routes>
       </Router>
       <ChatBot />

@@ -1,42 +1,74 @@
 .chat-bar-collapsible {
     position: fixed;
     bottom: 0px;
-    right: 0px;
+    right: 100px;
+   z-index: 999;
     
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .button-container button {
+    margin: 0 5px;
+  }
+  
+
+.chat-bar-collapsible.expanded {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    z-index: 999;
+  }
+
 .collapsible {
-    background-color: rgb(255, 157, 82);
-    color: rgb(11, 9, 9);
+  
+    
     cursor: pointer;
     padding: 18px;
     width: 30px;
     height: 30px;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    border-radius: 50%;
-    border: 3px solid white;
-    border-bottom: none;
+    
+    font-size: 60px;
+    border-radius: 20%;
+    color: #69d536;
+   
+}
+
+.titlebot{
+    background: #000;
+    display: flex;
+    flex-direction: row;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content:space-around;
+    height: 30px;
+    width: 100%;
+   
 }
 
 .content {
     max-height: 0;
     overflow:visible    ;
     transition: max-height 0.2s ease-out;
-    background-color: #001518;
+    background-color: #99abad;
     border-radius: 5px;
+   
 }
 
 .full-chat-block {
     width: 350px;
-    background: rgb(255, 122, 122);
+    background: rgb(255, 255, 255);
     text-align: center;
     overflow: auto;
     scrollbar-width: none;
     height: max-content;
     transition: max-height 0.2s ease-out;
     border-radius: 8px;
+    border: 2px solid black;
 }
 
 .outer-container {
@@ -61,12 +93,13 @@
 
 .chat-bar-input-block {
     display: flex;
-    float: left;
+  
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     align-items: center;
-    background-color: rgb(235, 235, 235);
+    border: 2px solid rgb(107, 61, 61);
+   
     border-radius: 10px 10px 0px 0px;
     padding: 10px 0px 10px 10px;
 }
@@ -92,7 +125,7 @@
 
 .input-box {
     float: left;
-    border: none;
+    border: 2px solid rgb(107, 61, 61);
     box-sizing: border-box;
     width: 100%;
     border-radius: 10px;
@@ -115,7 +148,7 @@
 .userText span {
     line-height: 1.5em;
     display: inline-block;
-    background: #6483a6;
+    background: #C99F4A;
     padding: 10px;
     border-radius: 8px;
     border-bottom-right-radius: 2px;
@@ -156,21 +189,20 @@
 }
 
 @media screen and (max-width:600px) {
-    .full-chat-block {
-        width: 100%;
-        border-radius: 0px;
-    }
+    
+
     .chat-bar-collapsible {
         position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 80%;
+        bottom: 0px;
+        right: 50px;
+       
+        
     }
     
-    .collapsible {
-        width: 100%;
-        border: 0px;
-        border-top: 3px solid rgb(13, 1, 1);
-        border-radius: 0px;
-    }
+    .chat-bar-collapsible.expanded {
+        position: fixed;
+        top: 30px;
+        right: 10px;
+        z-index: 999;
+      }
 }

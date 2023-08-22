@@ -1,22 +1,68 @@
 .case_container{
 
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    border: 1px solid #ccc;
+    flex-direction: column;
+    align-items: center;
+   height: 100%;
+
+   width: 100%;
   padding: 10px;
 }
 
+.case-features{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 
+  
+
+}
+
+.case-features button{
+  background-color: #C99F4A;
+  color: black;
+  margin-left: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px;
+
+}
+
+.search{
+  display: flex;
+  flex-direction: row;
+ 
+  
+}
+.search input{
+  height: 25px;
+ font-size: 12px;
+ width: 50%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.case-container{
+  border: 2px solid #030202;
+  border-radius: 2px;
+  background-color: #A9A9A9;
+  width: 50%;
+}
 
 .case_brief {
     display: flex;
     flex-direction: column;
+    font-size: 100%;
     align-items: flex-start;
-    border: 3px solid #0a0404;
+    border-bottom: 3px solid #0a0404;
   padding: 10px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 1px;
+  background: #FAFAFB;
   }
   
   .case-heading {
@@ -30,41 +76,177 @@
   .case-description {
     
     margin-top: 10px;
+   
   }
   
-  input[type="text"] {
+  textarea{
+    height: 80px;
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid black;
   }
+
   
   button[type="submit"] {
-    padding: 10px 20px;
+   
     background-color: #4caf50;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
-
-  .create_new{
-    margin-left: 10%;
+.crt{
+ margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+crt button :hover{
+    background-color: #65a067;
   }
 
+  .create_new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 50%;
+  
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  
+    width: 80%;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  input {
+   
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 100%;
+   
+  }
+  
+  
+
+
   .case-details-container{
-    border-radius: 20px;
+    border-radius: 5px;
     border: 3px solid #0e0101;
-    margin-left: 10%;
-    margin-top: 50px;
+   
+    background-color: #A9A9A9;
+    padding: 10px;
+    font-size: 100%;
+    width: 80%;
+  }
+  .case-details h1{
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+
   }
 
   .close{
-    padding: 1px 2px;
-    background-color: #e63446;
+    margin-left: 50%;
+    padding: 5px 5px;
+    background-color: #C99F4A;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    .case_container{
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ff0909;
+     height: 100vh;
+     width: 100%;
+    padding: 10px;
+  }
+
+  .case-container{
+    border: 2px solid #030202;
+    border-radius: 2px;
+    background-color: #A9A9A9;
+    width: 100%;
+  }
+  
+  .case_brief {
+      display: flex;
+      flex-direction: column;
+      font-size: 50%;
+      align-items: flex-start;
+      border-bottom: 3px solid #0a0404;
+    padding: 10px;
+    width: 100%;
+    border-radius: 1px;
+    background: #FAFAFB;
+    }
+
+    
+
+  .create_new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+  
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  
+
+
+  .case-details-container{
+    border-radius: 5px;
+    border: 3px solid #0e0101;
+   
+    background-color: #A9A9A9;
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+
+
+  }
+
+  textarea{
+    height: 80px;
+    width: 100%;
+    border: 2px solid black;
+  }
+  
   }

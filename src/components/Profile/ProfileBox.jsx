@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ReactSwitch from "react-switch";
 
 
@@ -22,9 +23,14 @@ const ProfileBox = () => {
 
   return (
     
-    <div className="m-10 p-5 w-full bg-zinc-300  rounded-lg shadow-lg">
+    <div className="p-5 w-full bg-zinc-300  rounded-lg shadow-lg">
      
-      <div className="flex flex-col space-y-0 justify-center items center w-full py-2 border-b border-white ">
+      <div className="flex flex-col space-y-0 justify-center items-center w-full py-2 border-b border-white ">
+
+      <div className="w-20 h-20 bg-gray-300 rounded-full overflow-hidden item-center">
+    <img src="https://cdn.coingape.com/wp-content/uploads/2023/06/10234102/Cynthia-Lummis-bitcoin.webp" alt="Profile" className="w-full h-full object-cover" />
+     </div>
+
         <h2 className="text-2xl text-zinc-500 font-bold text-center m-0 p-0 ">
           Chris Lewis
         </h2>
@@ -38,10 +44,14 @@ const ProfileBox = () => {
           <h2>En</h2>
         </div>
         <div className="w-full flex justify-between mb-2">
+        <Link to={{ pathname: '/profile/terms' }}>
           <h2>Terms and Condition</h2>
+          </Link>
         </div>
         <div className="w-full flex justify-between mb-2">
+        <Link to={{ pathname: '/profile/about' }}>
           <h2>About us</h2>
+          </Link>
         </div>
         <div className="w-full flex justify-between mb-2">
           <h2>DarkMode</h2>
@@ -65,9 +75,6 @@ const ProfileBox = () => {
         </div>
         <div className="w-full flex justify-between mb-2">
           <h2>Contact Us</h2>
-        </div>
-        <div className="w-full flex justify-between mb-3">
-          <h2>About us</h2>
         </div>
 
         <div className="w-full flex justify-between mb-2">
