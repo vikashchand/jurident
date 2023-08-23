@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css'
 import { GiRocketThruster } from "react-icons/gi";
@@ -17,6 +17,7 @@ function Navbar() {
   
   const handleSignOut = () => signOutUser();
   const { currentUser } = useContext(UserContext);
+
 
 
   return (
@@ -44,7 +45,7 @@ function Navbar() {
               Home
             </NavLink>
           </li>
-  
+              {currentUser && 
                   <li className="nav-item">
                 <NavLink
                   to="/Services"
@@ -55,7 +56,7 @@ function Navbar() {
                 >
                   Services
                 </NavLink>
-              </li>
+              </li>}
 
               
               <li className="nav-item">

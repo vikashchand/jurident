@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, getDocs, setDoc, collection, writeBatch } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
@@ -72,6 +72,37 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
 }
 
 
+export const createDocWithUserIDRef = async (userAuth, additionalInformation) => {
+    if (!userAuth) { return; }
+    const createdAt = new Date();
+    const currenttime = Date.now();
+    const userDocRef = doc(db, 'cases', userAuth.uid, 'case', `${currenttime}`);
+    const userSnapshot = await getDoc(userDocRef);
+
+    if (!userSnapshot.exists()) {
+        try {
+            await setDoc(userDocRef, { createdAt, ...additionalInformation });
+        } catch (error) {
+            console.log('Error creating the user', error.message);
+        }
+    }
+}
+
+
+export const fetchDocWithUserIDRef = async (userAuth) => {
+    if (!userAuth) { return; }
+    const casesDocRef = doc(db, 'cases', userAuth.uid);
+    const caseDocRef = collection(casesDocRef, 'case');
+    const caseSnapshot = await getDocs(caseDocRef);
+
+
+    const latestCases = [];
+    caseSnapshot.forEach(doc => {
+        latestCases.push(doc.data());
+    })
+    return latestCases;
+
+}
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) { return; }
