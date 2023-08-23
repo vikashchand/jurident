@@ -6,17 +6,19 @@ import Imag from "../News/MyImg"
 import MyHd from "../News/MyHeading"
 import Card from "../News/MyCards"
 import FAQ from "../News/MyFAQ"
+import News from '../News/News';
 
 export default function MyHome() {
   return (
     <>
     <MyHead></MyHead>
     <Nav></Nav>
-    <Search></Search>
-    <Imag src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"></Imag>
-    <MyHd></MyHd>
-    <Card src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"></Card>
-    <FAQ></FAQ>
+    {/* <Search></Search> */}
+    {/* <Imag src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"></Imag> */}
+    {/* <MyHd></MyHd> */}
+    {/* <Card src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"></Card> */}
+    <News pageSize={6} country={"in"} category="business"/>
+    {/* <FAQ></FAQ> */}
     
     </>
   )
