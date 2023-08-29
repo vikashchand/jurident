@@ -104,9 +104,43 @@ export const fetchDocWithUserIDRef = async (userAuth) => {
 
 }
 
+const isStrongPassword = (password) => {
+    const minLength = 8;
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const digitRegex = /[0-9]/;
+    const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/;
+
+    if (password.length < minLength) {
+        return false;
+    }
+
+    if (!uppercaseRegex.test(password)) {
+        return false;
+    }
+
+    if (!lowercaseRegex.test(password)) {
+        return false;
+    }
+
+    if (!digitRegex.test(password)) {
+        return false;
+    }
+
+    if (!specialCharRegex.test(password)) {
+        return false;
+    }
+
+    return true;
+}
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) { return; }
-    return await createUserWithEmailAndPassword(auth, email, password)
+    if (isStrongPassword(password)) {
+        return await createUserWithEmailAndPassword(auth, email, password)
+    }
+    else {
+        alert("Provide more stronger password")
+    }
 }
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {

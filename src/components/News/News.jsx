@@ -65,7 +65,9 @@ export default class News extends Component {
 
   async componentDidMount(){
     console.log("cdm");
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=d34d49aff85a475c9d186e22b4fe73b1&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/everything?q=India+constitution&from=2023-08-22&to=2023-08-22&sortBy=popularity&apiKey=d34d49aff85a475c9d186e22b4fe73b1&page=1&pageSize=${this.props.pageSize}`;
+    
+   
     this.setState({loading:true});
     let data = await fetch(url);
     let parsedData = await data.json();

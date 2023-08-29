@@ -17,7 +17,8 @@ export default function MyHome() {
     {/* <Imag src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"></Imag> */}
     {/* <MyHd></MyHd> */}
     {/* <Card src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"></Card> */}
-    <News pageSize={6} country={"in"} category="business"/>
+    <News pageSize={24} country={"in"} category="all"/>
+
     {/* <FAQ></FAQ> */}
     
     </>
