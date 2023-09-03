@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import dummyCaseData from "./dummyCaseData";
 import "./Case.css"; // Assuming you have a separate CSS file named case.css
 import { AiOutlineSearch } from "react-icons/ai";
 import{MdDeleteForever} from "react-icons/md"
+import { createDocWithUserIDRef, fetchDocWithUserIDRef } from "../../utils/firebase.utils";
+import { UserContext } from "../../context/user.context";
 const Case = () => {
+  
+  const { currentUser } = useContext(UserContext);
   const [selectedCase, setSelectedCase] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCases, setFilteredCases] = useState(dummyCaseData);
+  const [caseData, setCaseData] = useState([]);
+  const [filteredCases, setFilteredCases] = useState([]);
   const [caseNo, setCaseNo] = useState("");
   const [description,setDescription]=useState("");
   const [caseName, setCaseName] = useState("");
@@ -19,7 +24,7 @@ const Case = () => {
   const [selectedFeature, setSelectedFeature] = useState("");
 
   const handleCaseClick = (index) => {
-    setSelectedCase(dummyCaseData[index]);
+    setSelectedCase(caseData[index]);
     setSelectedFeature("case-details-container");
   };
 
@@ -49,6 +54,8 @@ const Case = () => {
 
     dummyCaseData.push(newCase); // Store new case data in dummyCaseData array
 
+    createDocWithUserIDRef(currentUser, newCase);
+
     // Reset form fields
     setCaseNo("");
     setCaseName("");
@@ -65,7 +72,7 @@ const Case = () => {
     const query = e.target.value;
     setSearchQuery(query);
 
-    const filtered = dummyCaseData.filter(
+    const filtered = caseData.filter(
       (caseItem) =>
         caseItem.caseNo.toLowerCase().includes(query.toLowerCase()) ||
         caseItem.caseName.toLowerCase().includes(query.toLowerCase())
@@ -78,10 +85,21 @@ const Case = () => {
     setSelectedFeature(feature);
   };
 
+
+  const handleCaseContainer = () => {
+    handleFeatureSelection("case-container");
+    const latest =async()=>
+    {
+      const casesFetch = await fetchDocWithUserIDRef(currentUser);
+      setCaseData(casesFetch);
+      setFilteredCases(casesFetch);
+    }
+    latest();
+  }
   return (
     <div className="case_container">
       <div className="case-features">
-        <button onClick={() => handleFeatureSelection("case-container")}>
+        <button onClick={handleCaseContainer}>
         Case Lists
         </button>
         

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, getDocs, setDoc, collection, writeBatch } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
@@ -72,10 +72,75 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
 }
 
 
+export const createDocWithUserIDRef = async (userAuth, additionalInformation) => {
+    if (!userAuth) { return; }
+    const createdAt = new Date();
+    const currenttime = Date.now();
+    const userDocRef = doc(db, 'cases', userAuth.uid, 'case', `${currenttime}`);
+    const userSnapshot = await getDoc(userDocRef);
 
+    if (!userSnapshot.exists()) {
+        try {
+            await setDoc(userDocRef, { createdAt, ...additionalInformation });
+        } catch (error) {
+            console.log('Error creating the user', error.message);
+        }
+    }
+}
+
+
+export const fetchDocWithUserIDRef = async (userAuth) => {
+    if (!userAuth) { return; }
+    const casesDocRef = doc(db, 'cases', userAuth.uid);
+    const caseDocRef = collection(casesDocRef, 'case');
+    const caseSnapshot = await getDocs(caseDocRef);
+
+
+    const latestCases = [];
+    caseSnapshot.forEach(doc => {
+        latestCases.push(doc.data());
+    })
+    return latestCases;
+
+}
+
+const isStrongPassword = (password) => {
+    const minLength = 8;
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const digitRegex = /[0-9]/;
+    const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/;
+
+    if (password.length < minLength) {
+        return false;
+    }
+
+    if (!uppercaseRegex.test(password)) {
+        return false;
+    }
+
+    if (!lowercaseRegex.test(password)) {
+        return false;
+    }
+
+    if (!digitRegex.test(password)) {
+        return false;
+    }
+
+    if (!specialCharRegex.test(password)) {
+        return false;
+    }
+
+    return true;
+}
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) { return; }
-    return await createUserWithEmailAndPassword(auth, email, password)
+    if (isStrongPassword(password)) {
+        return await createUserWithEmailAndPassword(auth, email, password)
+    }
+    else {
+        alert("Provide more stronger password")
+    }
 }
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
