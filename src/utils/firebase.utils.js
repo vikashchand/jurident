@@ -87,6 +87,13 @@ export const createDocWithUserIDRef = async (userAuth, additionalInformation) =>
         }
     }
 }
+export const createDoc = async (firstName, lastName, phone, email, feedback) => {
+    const createdAt = new Date();
+    const currenttime = Date.now();
+    const userDocRef = doc(collection(db, "contacts"));
+
+    await setDoc(userDocRef, { createdAt, firstName, lastName, phone, email, feedback });
+}
 
 
 export const fetchDocWithUserIDRef = async (userAuth) => {

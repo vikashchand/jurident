@@ -22,7 +22,9 @@ import { Profile } from "./components/Profile/Profile";
 import ChangePass_Page from "./components/Profile/ChangePass_Page";
 import Login from "./Screen/Loginscreen/Login/Login";
 import Register from "./Screen/Registerscreen/Register/Register"
+import axios from "axios";
 
+axios.defaults.baseURL ="http://localhost:5000"
 function App() {
   return (
     <>
