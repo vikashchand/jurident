@@ -15,6 +15,11 @@
     "@fullcalendar/interaction": "^6.1.8",
     "@fullcalendar/react": "^6.1.8",
     "@fullcalendar/timegrid": "^6.1.8",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase": "^10.3.1",
+    "firebase-admin": "^11.10.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,7 +27,8 @@
     "react-player": "^2.12.0",
     "react-router-dom": "^6.11.2",
     "react-switch": "^7.0.0",
-    "styled-components": "^5.3.11"
+    "styled-components": "^5.3.11",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -30,6 +36,8 @@
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "^3.3.2",
     "vite": "^4.2.0"
   }

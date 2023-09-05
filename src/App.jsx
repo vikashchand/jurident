@@ -20,7 +20,11 @@ import {articles} from './components/News/data'
 import { Terms_and_Condition } from "./components/Profile/Terms_and_Conditions";
 import { Profile } from "./components/Profile/Profile";
 import ChangePass_Page from "./components/Profile/ChangePass_Page";
+import Login from "./Screen/Loginscreen/Login/Login";
+import Register from "./Screen/Registerscreen/Register/Register"
+import axios from "axios";
 
+axios.defaults.baseURL ="http://localhost:5000"
 function App() {
   return (
     <>
@@ -29,8 +33,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
         
-          <Route path = "/home" element = {<Homee/>}/>
-          <Route path = "/news" element = {<Newss/>}/>
+          <Route path = "/news" element = {<Homee/>}/>
+          {/* <Route path = "/home" element = {<Newss/>}/> */}
           {articles.map((article) => {
                         const { id, author, title, description,url, urlToImage, publishedAt,content  } = article;
                         return (
@@ -53,6 +57,8 @@ function App() {
 
           <Route path="/Services" element={<Services />} />
           <Route path="/About" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/News" element={<News />} />
           <Route path="/profile/about" element={<About_Us_Page />} />
           <Route exact path="/Blogs" element={<Blogs />} />
