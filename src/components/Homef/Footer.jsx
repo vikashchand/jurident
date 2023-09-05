@@ -40,7 +40,7 @@ const Footer = () => {
                             <Link to="/">Support</Link>
                         </li>
                         <li className=" mt-6">
-                            <Link to="/">Contact us</Link>
+                            <Link to="/Contact">Contact us</Link>
                         </li>
                     </ul>
                     <div className="ml-[100px]">

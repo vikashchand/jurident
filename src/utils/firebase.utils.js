@@ -61,133 +61,115 @@ export const signInWithFacebook = () => {
 
 export const db = getFirestore();
 
-export const addCollectionAndDocuments = async (
-	collectionKey,
-	objectsToAdd,
-) => {
-	const collectionRef = collection(db, collectionKey);
-	const batch = writeBatch(db);
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
 
-	objectsToAdd.forEach(object => {
-		const docRef = doc(collectionRef, object.title.toLowerCase());
-		batch.set(docRef, object);
-	});
+    objectsToAdd.forEach((object) => {
+        const docRef = doc(collectionRef, object.title.toLowerCase());
+        batch.set(docRef, object);
+    });
 
-	await batch.commit();
-	console.log("done");
-};
+    await batch.commit();
+    console.log('done');
+}
 
-export const createUserDocumentFromAuth = async (
-	userAuth,
-	additionalInformation,
-) => {
-	if (!userAuth) {
-		return;
-	}
-	const userDocRef = doc(db, "users", userAuth.uid);
-	const userSnapshot = await getDoc(userDocRef);
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation) => {
+    if (!userAuth) { return; }
+    const userDocRef = doc(db, 'users', userAuth.uid);
+    const userSnapshot = await getDoc(userDocRef);
 
-	if (!userSnapshot.exists()) {
-		const { email } = userAuth;
-		const createdAt = new Date();
-		try {
-			await setDoc(userDocRef, {
-				email,
-				createdAt,
-				...additionalInformation,
-			});
-		} catch (error) {
-			console.log("Error creating the user", error.message);
-		}
-	}
+    if (!userSnapshot.exists()) {
+        const { email } = userAuth;
+        const createdAt = new Date();
+        try {
+            await setDoc(userDocRef, { email, createdAt, ...additionalInformation });
+        } catch (error) {
+            console.log('Error creating the user', error.message);
+        }
+    }
 
-	return userDocRef;
-};
+    return userDocRef;
+}
 
-export const createDocWithUserIDRef = async (
-	userAuth,
-	additionalInformation,
-) => {
-	if (!userAuth) {
-		return;
-	}
-	const createdAt = new Date();
-	const currenttime = Date.now();
-	const userDocRef = doc(db, "cases", userAuth.uid, "case", `${currenttime}`);
-	const userSnapshot = await getDoc(userDocRef);
 
-	if (!userSnapshot.exists()) {
-		try {
-			await setDoc(userDocRef, { createdAt, ...additionalInformation });
-		} catch (error) {
-			console.log("Error creating the user", error.message);
-		}
-	}
-};
+export const createDocWithUserIDRef = async (userAuth, additionalInformation) => {
+    if (!userAuth) { return; }
+    const createdAt = new Date();
+    const currenttime = Date.now();
+    const userDocRef = doc(db, 'cases', userAuth.uid, 'case', `${currenttime}`);
+    const userSnapshot = await getDoc(userDocRef);
 
-export const fetchDocWithUserIDRef = async userAuth => {
-	if (!userAuth) {
-		return;
-	}
-	const casesDocRef = doc(db, "cases", userAuth.uid);
-	const caseDocRef = collection(casesDocRef, "case");
-	const caseSnapshot = await getDocs(caseDocRef);
+    if (!userSnapshot.exists()) {
+        try {
+            await setDoc(userDocRef, { createdAt, ...additionalInformation });
+        } catch (error) {
+            console.log('Error creating the user', error.message);
+        }
+    }
+}
+export const createDoc = async (firstName, lastName, phone, email, feedback) => {
+    const createdAt = new Date();
+    const currenttime = Date.now();
+    const userDocRef = doc(collection(db, "contacts"));
 
-	const latestCases = [];
-	caseSnapshot.forEach(doc => {
-		latestCases.push({ ...doc.data(), id: doc.id });
-	});
-	return latestCases;
-};
+    await setDoc(userDocRef, { createdAt, firstName, lastName, phone, email, feedback });
+}
 
-export const deleteDocWithUserIDCaseIDRef = async (userAuth, caseID) => {
-	if (!userAuth) {
-		return;
-	}
 
-	await deleteDoc(doc(db, "cases", userAuth.uid, "case", caseID));
-};
+export const fetchDocWithUserIDRef = async (userAuth) => {
+    if (!userAuth) { return; }
+    const casesDocRef = doc(db, 'cases', userAuth.uid);
+    const caseDocRef = collection(casesDocRef, 'case');
+    const caseSnapshot = await getDocs(caseDocRef);
 
-const isStrongPassword = password => {
-	const minLength = 8;
-	const uppercaseRegex = /[A-Z]/;
-	const lowercaseRegex = /[a-z]/;
-	const digitRegex = /[0-9]/;
-	const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/;
 
-	if (password.length < minLength) {
-		return false;
-	}
+    const latestCases = [];
+    caseSnapshot.forEach(doc => {
+        latestCases.push(doc.data());
+    })
+    return latestCases;
 
-	if (!uppercaseRegex.test(password)) {
-		return false;
-	}
+}
 
-	if (!lowercaseRegex.test(password)) {
-		return false;
-	}
+const isStrongPassword = (password) => {
+    const minLength = 8;
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const digitRegex = /[0-9]/;
+    const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/;
 
-	if (!digitRegex.test(password)) {
-		return false;
-	}
+    if (password.length < minLength) {
+        return false;
+    }
 
-	if (!specialCharRegex.test(password)) {
-		return false;
-	}
+    if (!uppercaseRegex.test(password)) {
+        return false;
+    }
 
-	return true;
-};
+    if (!lowercaseRegex.test(password)) {
+        return false;
+    }
+
+    if (!digitRegex.test(password)) {
+        return false;
+    }
+
+    if (!specialCharRegex.test(password)) {
+        return false;
+    }
+
+    return true;
+}
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
-	if (!email || !password) {
-		return;
-	}
-	if (isStrongPassword(password)) {
-		return await createUserWithEmailAndPassword(auth, email, password);
-	} else {
-		alert("Provide more stronger password");
-	}
-};
-
+    if (!email || !password) { return; }
+    if (isStrongPassword(password)) {
+        return await createUserWithEmailAndPassword(auth, email, password)
+    }
+    else {
+        alert("Provide more stronger password")
+    }
+}
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 	if (!email || !password) {
 		return;

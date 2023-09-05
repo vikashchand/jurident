@@ -6,7 +6,16 @@ import './ContactPage.css'
 import { MdOutlineMessage } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
+import axios from "axios";
+import { createDoc } from "../../utils/firebase.utils";
 
+const defaultFormFeilds = {
+  firstName: '',
+  lastName: '',
+  phone: '',
+  email: '',
+  feedback:''
+}
 
 function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -15,6 +24,7 @@ function ContactPage() {
   const [email, setEmail] = useState("");
   const [feedback, setFeedback] = useState("");
   const [characterLimit] = useState(32);
+
   // event handler
   const handleChange = (event) => {
     setFirstName(event.target.value);
@@ -38,15 +48,32 @@ function ContactPage() {
       alert("Please fill in all the required fields.");
       return;
     }
+    else {
+      axios.post('/', {
+        firstname: firstName,
+        lastname: lastName,
+        phone: phone,
+        email: email,
+        feedback: feedback,
+      })
+        .then(function (response) {
+          // console.log(response);
+          createDoc(firstName, lastName, phone, email, feedback);
+          alert("Your response has been submitted");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   }
-
+ 
   return (
     <div className="container1" style={{ width: "100%" }}>
       <div style={{ width: "125%" }}>
         <h1 className="container title mt-10">CONTACT US </h1>
         <div className="container " style={{ width: "100%" }} >
           <div className="text" style={{ width: "80%", color:"black" }}>
-            Let’s Connect: We’re here to help, and we’d love to hear from you!
+            Let's Connect: We’re here to help, and we’d love to hear from you!
           Whether you have a question, a comment, or just want to chat, you can
           reach out to us through the contact form on this page, or by phone,
           email, or social media.
@@ -159,12 +186,12 @@ function ContactPage() {
              </div>
             </div>
           </div>
-          <button type="button" className="text-white bg-yellow-600 hover:bg-yellow-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-700 dark:border-yellow-700">SUBMIT</button>
+          <input type="submit" className="text-white bg-yellow-600 hover:bg-yellow-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-700 dark:border-yellow-700" value="SUBMIT"></input>
         </form>
         <div className="mb-6 group map"style={{width:"40%",height:"60px"}}>
     
             
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119150.55857764366!2d79.07185615537055!3d12.925560220092514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad38e61fa68ffb%3A0xbedda6917d262b5e!2sVellore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1688713043344!5m2!1sen!2sin" width="200%" height="800%" style={{ border: "0" }}></iframe>
+        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119150.55857764366!2d79.07185615537055!3d12.925560220092514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad38e61fa68ffb%3A0xbedda6917d262b5e!2sVellore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1688713043344!5m2!1sen!2sin" width="200%" height="800%" style={{ border: "0" }}></iframe> */}
     
             
       </div>
