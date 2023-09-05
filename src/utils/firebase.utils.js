@@ -1,15 +1,34 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
-import { getFirestore, doc, getDoc, getDocs, setDoc, collection, writeBatch } from 'firebase/firestore';
+import {
+	getAuth,
+	signInWithPopup,
+	GoogleAuthProvider,
+	FacebookAuthProvider,
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	signOut,
+	onAuthStateChanged,
+	signInWithRedirect,
+} from "firebase/auth";
+import {
+	getFirestore,
+	doc,
+	getDoc,
+	getDocs,
+	deleteDoc,
+	setDoc,
+	collection,
+	writeBatch,
+} from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
-    authDomain: "jurident-case-details.firebaseapp.com",
-    projectId: "jurident-case-details",
-    storageBucket: "jurident-case-details.appspot.com",
-    messagingSenderId: "1001180279233",
-    appId: "1:1001180279233:web:7dbe7d738338827c50ff40",
-    measurementId: "G-NYKLT1EFGW"
+	apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
+	authDomain: "jurident-case-details.firebaseapp.com",
+	projectId: "jurident-case-details",
+	storageBucket: "jurident-case-details.appspot.com",
+	messagingSenderId: "1001180279233",
+	appId: "1:1001180279233:web:7dbe7d738338827c50ff40",
+	measurementId: "G-NYKLT1EFGW",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -20,22 +39,24 @@ const facebookProvider = new FacebookAuthProvider();
 
 export const auth = getAuth();
 
-export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGooglePopup = () =>
+	signInWithPopup(auth, googleProvider);
 
 export const signInWithFacebook = () => {
-    signInWithRedirect(auth, facebookProvider);
-    getRedirectResult(auth)
-        .then((result) => {
-            const credential = FacebookAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            const user = result.user;
-
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            const email = error.customData.email;
-            const credential = FacebookAuthProvider.credentialFromError(error);
-        });
+	signInWithRedirect(auth, facebookProvider);
+	getRedirectResult(auth)
+		.then(result => {
+			const credential =
+				FacebookAuthProvider.credentialFromResult(result);
+			const token = credential.accessToken;
+			const user = result.user;
+		})
+		.catch(error => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			const email = error.customData.email;
+			const credential = FacebookAuthProvider.credentialFromError(error);
+		});
 };
 
 export const db = getFirestore();
@@ -149,12 +170,14 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
         alert("Provide more stronger password")
     }
 }
-
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
-    if (!email || !password) { return; }
-    return signInWithEmailAndPassword(auth, email, password);
-}
+	if (!email || !password) {
+		return;
+	}
+	return signInWithEmailAndPassword(auth, email, password);
+};
 
-export const signOutUser = async () => await signOut(auth)
+export const signOutUser = async () => await signOut(auth);
 
-export const onAuthStateChangedListner = (callback) => onAuthStateChanged(auth, callback); 
+export const onAuthStateChangedListner = callback =>
+	onAuthStateChanged(auth, callback);

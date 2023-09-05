@@ -33,8 +33,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
         
-          <Route path = "/home" element = {<Homee/>}/>
-          <Route path = "/news" element = {<Newss/>}/>
+          <Route path = "/news" element = {<Homee/>}/>
+          {/* <Route path = "/home" element = {<Newss/>}/> */}
           {articles.map((article) => {
                         const { id, author, title, description,url, urlToImage, publishedAt,content  } = article;
                         return (
