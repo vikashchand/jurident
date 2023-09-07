@@ -26,7 +26,7 @@ const Case = () => {
 	const [adversePartyLawyerName, setAdversePartyLawyerName] = useState("");
 	const [adversePartyLawyerNo, setAdversePartyLawyerNo] = useState("");
 	const [selectedFeature, setSelectedFeature] = useState("");
-	console.log(caseData);
+	// console.log(caseData);
 
 	const handleCaseClick = index => {
 		setSelectedCase(caseData[index]);
@@ -96,12 +96,14 @@ const Case = () => {
 			const casesFetch = await fetchDocWithUserIDRef(currentUser);
 			setCaseData(casesFetch);
 			setFilteredCases(casesFetch);
+			console.log(filteredCases);
 		};
 		latest();
 	};
 
-	const handleDeleteCase = async caseID => {
+	const handleDeleteCase = async (caseID) => {
 		await deleteDocWithUserIDCaseIDRef(currentUser, caseID);
+
 		const latest = async () => {
 			const casesFetch = await fetchDocWithUserIDRef(currentUser);
 			setCaseData(casesFetch);

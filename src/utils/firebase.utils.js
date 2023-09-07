@@ -1,34 +1,34 @@
 import { initializeApp } from "firebase/app";
 import {
-	getAuth,
-	signInWithPopup,
-	GoogleAuthProvider,
-	FacebookAuthProvider,
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	signOut,
-	onAuthStateChanged,
-	signInWithRedirect,
+    getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
+    FacebookAuthProvider,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+    signInWithRedirect,
 } from "firebase/auth";
 import {
-	getFirestore,
-	doc,
-	getDoc,
-	getDocs,
-	deleteDoc,
-	setDoc,
-	collection,
-	writeBatch,
+    getFirestore,
+    doc,
+    getDoc,
+    getDocs,
+    deleteDoc,
+    setDoc,
+    collection,
+    writeBatch,
 } from "firebase/firestore";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
-	authDomain: "jurident-case-details.firebaseapp.com",
-	projectId: "jurident-case-details",
-	storageBucket: "jurident-case-details.appspot.com",
-	messagingSenderId: "1001180279233",
-	appId: "1:1001180279233:web:7dbe7d738338827c50ff40",
-	measurementId: "G-NYKLT1EFGW",
+    apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
+    authDomain: "jurident-case-details.firebaseapp.com",
+    projectId: "jurident-case-details",
+    storageBucket: "jurident-case-details.appspot.com",
+    messagingSenderId: "1001180279233",
+    appId: "1:1001180279233:web:7dbe7d738338827c50ff40",
+    measurementId: "G-NYKLT1EFGW",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -40,23 +40,23 @@ const facebookProvider = new FacebookAuthProvider();
 export const auth = getAuth();
 
 export const signInWithGooglePopup = () =>
-	signInWithPopup(auth, googleProvider);
+    signInWithPopup(auth, googleProvider);
 
 export const signInWithFacebook = () => {
-	signInWithRedirect(auth, facebookProvider);
-	getRedirectResult(auth)
-		.then(result => {
-			const credential =
-				FacebookAuthProvider.credentialFromResult(result);
-			const token = credential.accessToken;
-			const user = result.user;
-		})
-		.catch(error => {
-			const errorCode = error.code;
-			const errorMessage = error.message;
-			const email = error.customData.email;
-			const credential = FacebookAuthProvider.credentialFromError(error);
-		});
+    signInWithRedirect(auth, facebookProvider);
+    getRedirectResult(auth)
+        .then(result => {
+            const credential =
+                FacebookAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+        })
+        .catch(error => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = FacebookAuthProvider.credentialFromError(error);
+        });
 };
 
 export const db = getFirestore();
@@ -117,20 +117,33 @@ export const createDoc = async (firstName, lastName, phone, email, feedback) => 
 }
 
 
-export const fetchDocWithUserIDRef = async (userAuth) => {
-    if (!userAuth) { return; }
-    const casesDocRef = doc(db, 'cases', userAuth.uid);
-    const caseDocRef = collection(casesDocRef, 'case');
+export const fetchDocWithUserIDRef = async userAuth => {
+    if (!userAuth) {
+        return;
+    }
+    const casesDocRef = doc(db, "cases", userAuth.uid);
+    const caseDocRef = collection(casesDocRef, "case");
     const caseSnapshot = await getDocs(caseDocRef);
-
 
     const latestCases = [];
     caseSnapshot.forEach(doc => {
-        latestCases.push(doc.data());
-    })
+        latestCases.push({ ...doc.data(), id: doc.id });
+    });
     return latestCases;
+};
 
-}
+export const deleteDocWithUserIDCaseIDRef = async (userAuth, caseID) => {
+    if (!userAuth) {
+        return;
+    }
+
+    try {
+        await deleteDoc(doc(db, "cases", userAuth.uid, "case", caseID));
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
 
 const isStrongPassword = (password) => {
     const minLength = 8;
@@ -171,13 +184,13 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
     }
 }
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
-	if (!email || !password) {
-		return;
-	}
-	return signInWithEmailAndPassword(auth, email, password);
+    if (!email || !password) {
+        return;
+    }
+    return signInWithEmailAndPassword(auth, email, password);
 };
 
 export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListner = callback =>
-	onAuthStateChanged(auth, callback);
+    onAuthStateChanged(auth, callback);
