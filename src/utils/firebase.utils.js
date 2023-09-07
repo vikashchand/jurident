@@ -117,27 +117,32 @@ export const createDoc = async (firstName, lastName, phone, email, feedback) => 
 }
 
 
-export const fetchDocWithUserIDRef = async (userAuth) => {
-    if (!userAuth) { return; }
-    const casesDocRef = doc(db, 'cases', userAuth.uid);
-    const caseDocRef = collection(casesDocRef, 'case');
+export const fetchDocWithUserIDRef = async userAuth => {
+    if (!userAuth) {
+        return;
+    }
+    const casesDocRef = doc(db, "cases", userAuth.uid);
+    const caseDocRef = collection(casesDocRef, "case");
     const caseSnapshot = await getDocs(caseDocRef);
-
 
     const latestCases = [];
     caseSnapshot.forEach(doc => {
-        latestCases.push(doc.data());
-    })
+        latestCases.push({ ...doc.data(), id: doc.id });
+    });
     return latestCases;
-
-}
+};
 
 export const deleteDocWithUserIDCaseIDRef = async (userAuth, caseID) => {
     if (!userAuth) {
         return;
     }
 
-    await deleteDoc(doc(db, "cases", userAuth.uid, "case", caseID));
+    try {
+        await deleteDoc(doc(db, "cases", userAuth.uid, "case", caseID));
+    }
+    catch (err) {
+        console.log(err);
+    }
 };
 
 const isStrongPassword = (password) => {
