@@ -132,6 +132,15 @@ export const fetchDocWithUserIDRef = async (userAuth) => {
 
 }
 
+export const deleteDocWithUserIDCaseIDRef = async (userAuth, caseID) => {
+    if (!userAuth) {
+        return;
+    }
+
+    await deleteDoc(doc(db, "cases", userAuth.uid, "case", caseID));
+};
+
+
 const isStrongPassword = (password) => {
     const minLength = 8;
     const uppercaseRegex = /[A-Z]/;
