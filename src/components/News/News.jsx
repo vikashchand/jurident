@@ -134,7 +134,7 @@ export default class News extends Component {
 
 	static defaultProps = {
 		source_country: "in",
-		offset: 1,
+		offset: 0,
 		title: "Politics",
 	};
 
@@ -150,13 +150,13 @@ export default class News extends Component {
 		this.state = {
 			news: [],
 			loading: false,
-			number: 9,
+			number: 10,
 		};
 	}
 
 	async componentDidMount() {
 		console.log("cdm");
-		let apiUrl = `https://api.worldnewsapi.com/search-news?text=India+law&source-countries=${this.props.source_country}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=${this.props.number}&offset=${this.props.offset}`;
+		let apiUrl = `https://api.worldnewsapi.com/search-news?text=India+law&source-countries=${this.props.source_country}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=10&offset=0`;
 
 		this.setState({ loading: true });
 		let data = await fetch(apiUrl);
@@ -174,16 +174,15 @@ export default class News extends Component {
 
 		let apiUrl = `https://api.worldnewsapi.com/search-news?text=India+law&source-countries=${
 			this.props.source_country
-		}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=${
-			this.props.number
-		}&offset=${this.props.offset - 1}`;
+		}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=10
+		&offset=${this.state.offset-10}`;
 		this.setState({ loading: true });
 		let data = await fetch(apiUrl);
 		let parsedData = await data.json();
 		this.setState({ loading: false });
 
 		this.setState({
-			offset: this.state.offset - 1,
+			offset: this.state.offset- 10,
 			news: parsedData.news,
 			loading: false,
 		});
@@ -192,23 +191,22 @@ export default class News extends Component {
 	handleNextClick = async () => {
 		console.log("Next");
 		if (
-			this.state.offset + 1 >
-			Math.ceil(this.state.available / this.props.number)
+			this.state.offset + 10 >
+			Math.ceil(this.state.available / 10)
 		) {
 		} else {
 			console.log("cdm");
 			let apiUrl = `https://api.worldnewsapi.com/search-news?text=India+law&source-countries=${
 				this.props.source_country
-			}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=${
-				this.props.number
-			}&offset=${this.props.offset + 1}`;
+			}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=10
+			&offset=${this.props.offset + 10}`;
 			this.setState({ loading: true });
 			let data = await fetch(apiUrl);
 			let parsedData = await data.json();
 			this.setState({ loading: false });
 
 			this.setState({
-				offset: this.state.offset + 1,
+				offset: this.state.offset + 10,
 				news: parsedData.news,
 				loading: false,
 			});
@@ -256,18 +254,19 @@ export default class News extends Component {
 				</div>
 				<div className="flex justify-around pb-10">
 					<button
-						disabled={this.state.offset <= 1}
+						// disabled={this.state.offset <= 0}
 						type="button"
 						className="btn-dark justify-center gap-x-8 rounded-lg border-4 border-indigo-500/75 px-2 py-2 font-bold text-blue-700"
 						onClick={this.handlePrevClick}
 					>
 						&larr; Previous
 					</button>
+					
 					<button
-						disabled={
-							this.state.offset + 1 >
-							Math.ceil(this.state.available / this.props.number)
-						}
+						// disabled={
+						// 	this.state.offset >
+						// 	Math.ceil(this.state.available / 10)	
+						// }
 						type="button"
 						className=" btn-dark ml-32 justify-items-stretch gap-x-8 rounded-lg border-4 border-indigo-500/75 px-4 py-2 font-bold text-blue-700"
 						onClick={this.handleNextClick}

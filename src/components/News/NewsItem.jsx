@@ -42,7 +42,8 @@ const NewsItem = ({ id, title, text, image, url, author, sentiment }) => {
 						Read More
 					</a>
 					<button onClick={handleBookmark}>Bookmark</button>
-					<button onClick={handleReadLater}>Read Later</button>
+					<button style={{ marginLeft: '20px' }} onClick={handleReadLater}>Read Later</button>
+
 				</div>
 			</div>
 		</div>
