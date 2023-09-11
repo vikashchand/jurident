@@ -1,27 +1,27 @@
-import { initializeApp } from "firebase/app";
 import {
-	getAuth,
-	signInWithPopup,
-	GoogleAuthProvider,
 	FacebookAuthProvider,
+	GoogleAuthProvider,
 	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	signOut,
+	getAuth,
 	onAuthStateChanged,
+	signInWithEmailAndPassword,
+	signInWithPopup,
 	signInWithRedirect,
+	signOut,
 } from "firebase/auth";
 import {
-	getFirestore,
+	arrayUnion,
+	collection,
+	deleteDoc,
 	doc,
 	getDoc,
 	getDocs,
-	deleteDoc,
+	getFirestore,
 	setDoc,
-	collection,
 	writeBatch,
-	updateDoc,
-	arrayUnion,
 } from "firebase/firestore";
+
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBXTNnaEYD6GYrPIXmocCAWt5-ApRwFDKk",
@@ -175,9 +175,11 @@ export const deleteDocWithUserIDCaseIDRef = async (userAuth, caseID) => {
 };
 
 export const bookmarkNews = async (userAuth, newsId) => {
+	console.log("here");
 	if (!userAuth) {
 		return;
 	}
+	console.log("then here");
 	try {
 		const bookmarksRef = doc(db, "news", "bookmarks");
 		// add current news id to user's bookmark array
