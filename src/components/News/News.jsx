@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+
+import PropTypes from "prop-types";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
-import PropTypes from "prop-types";
 
 export default class News extends Component {
 	// news = [
@@ -179,14 +180,14 @@ export default class News extends Component {
 		let apiUrl = `https://api.worldnewsapi.com/search-news?text=India+law&source-countries=${
 			this.props.source_country
 		}&earliest-publish-date=2023-08-22&latest-publish-date=2023-09-05&api-key=b9368fcfe9094e87b846a3ce6797cbb8&number=10
-		&offset=${this.state.offset-10}`;
+		&offset=${this.state.offset - 10}`;
 		this.setState({ loading: true });
 		let data = await fetch(apiUrl);
 		let parsedData = await data.json();
 		this.setState({ loading: false });
 
 		this.setState({
-			offset: this.state.offset- 10,
+			offset: this.state.offset - 10,
 			news: parsedData.news,
 			loading: false,
 		});
@@ -195,11 +196,9 @@ export default class News extends Component {
 
 	handleNextClick = async () => {
 		console.log("Next");
-
-		console.log(this.state.offset);
 		if (
-			this.setState({offset: this.state.offset+10})  >
-			Math.ceil(this.setState({available: this.state.available / 10}))
+			this.state.offset + 10 >
+			Math.ceil(this.state.available / 10)
 		) {
 		} else {
 			console.log("cdm");
@@ -234,6 +233,7 @@ export default class News extends Component {
 								>
 									<NewsItem
 										className="justify-around"
+										id={element.id}
 										title={
 											element.title
 												? element.title.slice(0, 50)
@@ -268,11 +268,11 @@ export default class News extends Component {
 					>
 						&larr; Previous
 					</button>
-					
+
 					<button
 						// disabled={
 						// 	this.state.offset >
-						// 	Math.ceil(this.state.available / 10)	
+						// 	Math.ceil(this.state.available / 10)
 						// }
 						type="button"
 						className=" btn-dark ml-32 justify-items-stretch gap-x-8 rounded-lg border-4 border-indigo-500/75 px-4 py-2 font-bold text-blue-700"
