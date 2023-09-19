@@ -22,9 +22,7 @@ import { Profile } from "./components/Profile/Profile";
 import ChangePass_Page from "./components/Profile/ChangePass_Page";
 import Login from "./Screen/Loginscreen/Login/Login";
 import Register from "./Screen/Registerscreen/Register/Register"
-import axios from "axios";
 
-axios.defaults.baseURL ="http://localhost:5000"
 function App() {
   return (
     <>
@@ -36,19 +34,22 @@ function App() {
           <Route path = "/news" element = {<Homee/>}/>
           {/* <Route path = "/home" element = {<Newss/>}/> */}
           {articles.map((article) => {
-                        const { id, author, title, description,url, urlToImage, publishedAt,content  } = article;
+                        const { id, title, text, summary, url, image, author ,language, source_country, sentiment } = article;
                         return (
                             <Route
                                 path={id}
                                 element={
                                     <News
-                                        author={author}
+
                                         title={title}
-                                        description={description}
+                                        text={text}
+                                        summary={summary}
                                         url={url}
-                                        urlToImage={urlToImage}
-                                        publishedAt={publishedAt}
-                                        content={content}
+                                        image={image}
+                                        author={author}
+                                        language={language}
+                                        source_country={source_country}
+                                        sentiment={sentiment}
                                     />
                                 }
                             />

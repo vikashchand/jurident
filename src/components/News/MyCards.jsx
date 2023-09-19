@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carrd from "./MyCard"
+import Card from "./MyCard"
 import {articles} from "./data"
 
 export default class MyCards extends Component {
@@ -23,7 +23,7 @@ export default class MyCards extends Component {
                 <div className="row grid grid-cols-2 gap-4">
                 {this.state.articles.map((element)=>{
                   return <div className="col md-4" key = {element.url}>
-                  <Carrd title={element.title.slice(0,45)} description={element.description.slice(0,150)} imag = {element.urlToImage} tags= {element.source.name} time = {element.publishedAt} author = {element.author} newsUrl={element.url} id={element.id}/>
+                  <Card title={element.title.slice(0,45)} text={element.text.slice(0,150)} image = {element.image} sentiment = {element.sentiment} author = {element.author} url={element.url} id={element.id}/>
                   </div>
                 })}
                 
