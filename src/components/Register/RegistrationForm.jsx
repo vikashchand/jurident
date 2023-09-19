@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signInWithFacebook, signInWithGooglePopup } from "../../utils/firebase.utils";
+import { Helmet } from "react-helmet-async";
 
 const defaultFormFields = {
   firstName: '',
@@ -61,7 +62,14 @@ const RegistrationForm = () => {
     signInWithFacebook();
   };
 
-  return (
+  return (<>
+  
+    <Helmet>
+
+      <title>Registeration</title>
+      <meta name="description" content="registration form of Jurident Site" />
+    </Helmet>
+
     <div id="form">
       <div className="w-full max-w-xs">
         <form className="bg-white px-8 pt-6 pb-8 mb-4 login" onSubmit={handleSubmit}>
@@ -148,6 +156,9 @@ const RegistrationForm = () => {
         </form>
       </div>
     </div>
+
+    </>
+    
   );
 };
 

@@ -23,6 +23,8 @@ import ChangePass_Page from "./components/Profile/ChangePass_Page";
 import Login from "./Screen/Loginscreen/Login/Login";
 import Register from "./Screen/Registerscreen/Register/Register"
 
+import { HelmetProvider,Helmet } from "react-helmet-async";
+
 function App() {
   return (
     <>
@@ -59,7 +61,11 @@ function App() {
           <Route path="/Services" element={<Services />} />
           <Route path="/About" element={<About />} />
           <Route path="/login" element={<Login />} />
+          
+          
           <Route path="/register" element={<Register />} />
+
+          
           <Route path="/News" element={<News />} />
           <Route path="/profile/about" element={<About_Us_Page />} />
           <Route exact path="/Blogs" element={<Blogs />} />
