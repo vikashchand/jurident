@@ -1,2 +1,7 @@
 https://jurident.vercel.app/register
 https://jurident.vercel.app/
+https://jurident.vercel.app/Blogs
+https://jurident.vercel.app/News
+https://jurident.vercel.app/About
+https://jurident.vercel.app/login
+

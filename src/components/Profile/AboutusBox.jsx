@@ -8,6 +8,7 @@ const AboutusBox = () => {
   }
   return (
     <>
+    
       <div className="w-full rounded-lg shadow-lg bg-zinc-300 ">
         <div className="p-5">
         <h2 className="text-2xl text-zinc-500 font-bold  mb-10 p-0 ">

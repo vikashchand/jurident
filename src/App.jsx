@@ -28,6 +28,8 @@ import { HelmetProvider,Helmet } from "react-helmet-async";
 function App() {
   return (
     <>
+
+    <HelmetProvider>
       <Router>
         <Navbar/>
         <Routes>
@@ -78,6 +80,7 @@ function App() {
         </Routes>
       </Router>
       <ChatBot />
+      </HelmetProvider>
     </>
   );
 }
