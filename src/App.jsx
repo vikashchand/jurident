@@ -24,6 +24,8 @@ import TopNewsScreen from "./Screen/NewsScreen/SubScreens/TopNewsScreen";
 import TrendingScreen from "./Screen/NewsScreen/SubScreens/TrendingScreen";
 import UnreadScreen from "./Screen/NewsScreen/SubScreens/UnreadScreen";
 
+import { HelmetProvider,Helmet } from "react-helmet-async";
+
 function App() {
 	return (
 		<>

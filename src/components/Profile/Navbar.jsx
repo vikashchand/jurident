@@ -5,6 +5,8 @@ import bell from '../../assets/Lawyerpic.jpeg'
 const Navbar = () => {
   return (
     <>
+
+
       <div className="flex justify-between">
 
         <button className="font-bold text-2xl">
