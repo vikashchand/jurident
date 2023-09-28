@@ -10,6 +10,7 @@ const NewsItem = ({ id, title, text, image, url, author, sentiment }) => {
 	const handleBookmark = async () => {
 		await bookmarkNews(currentUser, id);
 	};
+
 	const handleReadLater = async () => {
 		await readLaterNews(currentUser, id);
 	};

@@ -174,18 +174,15 @@ export const deleteDocWithUserIDCaseIDRef = async (userAuth, caseID) => {
 	}
 };
 
-export const bookmarkNews = async (userAuth, newsId) => {
-	console.log("here");
-	if (!userAuth) {
-		return;
-	}
-	console.log("then here");
+export const bookmarkNews = async (userAuth, news) => {
+	if (!userAuth) return;
+
 	try {
 		const bookmarksRef = doc(db, "news", "bookmarks");
 		// add current news id to user's bookmark array
 		await setDoc(
 			bookmarksRef,
-			{ [userAuth.uid]: arrayUnion(newsId) },
+			{ [userAuth.uid]: arrayUnion(news) },
 			{ merge: true },
 		);
 	} catch (err) {
@@ -193,16 +190,48 @@ export const bookmarkNews = async (userAuth, newsId) => {
 	}
 };
 
-export const readLaterNews = async (userAuth, newsId) => {
-	if (!userAuth) {
-		return;
-	}
+export const getUserBookmarksNews = async userAuth => {
+	if (!userAuth) return;
+
 	try {
-		const bookmarksRef = doc(db, "news", "readLater");
+		const bookmarksCollection = collection(db, "news");
+
+		const bookmarks = await getDocs(bookmarksCollection);
+		const newsData = bookmarks.docs.map(doc => ({
+			...doc.data(),
+		}));
+
+		return newsData.at(0)[userAuth.uid];
+	} catch (err) {
+		console.warn(err);
+		return [];
+	}
+};
+
+export const getUserReadLaterNews = async userAuth => {
+	if (!userAuth) return;
+	try {
+		const newsCollection = collection(db, "news");
+		const news = await getDocs(newsCollection);
+		const newsData = news.docs.map(doc => ({
+			...doc.data(),
+		}));
+		return newsData.at(1)[userAuth.uid];
+	} catch (err) {
+		console.warn(err);
+		return [];
+	}
+};
+
+export const readLaterNews = async (userAuth, news) => {
+	if (!userAuth) return;
+
+	try {
+		const readLaterRef = doc(db, "news", "readLater");
 		// add current news id to user's bookmark array
 		await setDoc(
-			bookmarksRef,
-			{ [userAuth.uid]: arrayUnion(newsId) },
+			readLaterRef,
+			{ [userAuth.uid]: arrayUnion(news) },
 			{ merge: true },
 		);
 	} catch (err) {
