@@ -2,7 +2,7 @@ import React from "react";
 import Accordion from "./Accordion";
 import { accordionData } from "./Content";
 import "./Faq.css";
-
+import { Helmet } from "react-helmet-async";
 const Faq = () => {
   return (
     <div>

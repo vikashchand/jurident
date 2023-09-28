@@ -1,7 +1,7 @@
 import React from 'react'
 import profile from '../../assets/Lawyerpic.jpeg'
 import bell from '../../assets/Lawyerpic.jpeg'
-
+import { Helmet } from "react-helmet-async";
 const Navbar = () => {
   return (
     <>

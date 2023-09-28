@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Carrd from "./MyCard"
 import {articles} from "./data"
-
+import { Helmet } from "react-helmet-async";
 export default class MyCards extends Component {
     
         articles = articles;

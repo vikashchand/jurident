@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-
+import { Helmet } from "react-helmet-async";
 function MyFooter() {
   return (
     <div className="d-flex justify-content-between p-4 mx-4">

@@ -1,7 +1,7 @@
 import React from "react";
 import { TrendingData } from "../dummyData";
 import TrendingItem from "./TrendingItem";
-
+import { Helmet } from "react-helmet-async";
 const Trending = () => {
   return (
     <div>

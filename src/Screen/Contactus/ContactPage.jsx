@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import './ContactPage.css'
 
-
+import { Helmet } from "react-helmet-async";
 import { MdOutlineMessage } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";

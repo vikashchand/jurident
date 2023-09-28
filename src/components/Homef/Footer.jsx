@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GrTwitter, GrFacebook, GrInstagram } from "react-icons/gr";
 import { useEffect, useState } from "react";
-
+import { Helmet } from "react-helmet-async";
 const Footer = () => {
     const [screenSize, setScreenSize] = useState(window.innerWidth);
     useEffect(() => {

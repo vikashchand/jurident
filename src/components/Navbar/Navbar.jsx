@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import log from '../../assets/new jd 2.png'
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase.utils";
-
+import { Helmet } from "react-helmet-async";
 function Navbar() {
   const [click, setClick] = useState(false);
 

@@ -3,7 +3,7 @@ import Fullcalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-
+import { Helmet } from "react-helmet-async";
 function Calendar() {
   return (
     <div>

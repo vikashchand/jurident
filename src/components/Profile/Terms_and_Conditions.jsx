@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileBox from './ProfileBox'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from "react-helmet-async";
 export const Terms_and_Condition=()=>
 {
     const TermsBox=()=>

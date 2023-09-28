@@ -1,7 +1,7 @@
 import React from "react";
 
 
-
+import { Helmet } from "react-helmet-async";
 import "./Register.css";
 import RegistrationForm from "../../../components/Register/RegistrationForm";
 import RegistrationInfo from "../../../components/Register/RegistrationInfo";

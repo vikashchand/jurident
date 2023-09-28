@@ -4,6 +4,7 @@ import {
     AiOutlineArrowLeft,
 } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Sixth = () => {
     const [screenSize, setScreenSize] = useState(window.innerWidth);

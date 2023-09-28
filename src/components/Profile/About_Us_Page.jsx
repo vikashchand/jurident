@@ -1,7 +1,7 @@
 import React from 'react'
 import AboutusBox from './AboutusBox'
 import ProfileBox from './ProfileBox'
-
+import { Helmet } from "react-helmet-async";
 const About_Us_Page = () => {
   return (
     <div className='flex flex-wrap justify-center  mt-5 mx-5 lg:space-x-20'>

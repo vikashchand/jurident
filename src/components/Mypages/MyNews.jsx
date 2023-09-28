@@ -7,7 +7,7 @@ import MyImg from "../News/MyImg";
 import MyTitle from "../News/MyTitle";
 import MyContent from "../News/MyContent";
 import MyFooter from "../News/MyFooter";
-
+import { Helmet } from "react-helmet-async";
 export default function MyNews(props) {
     return (
         <div>

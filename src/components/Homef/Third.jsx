@@ -1,5 +1,5 @@
 import bg from "../../assets/grey_bg.png";
-
+import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 const Third = () => {
     const [screenSize, setScreenSize] = useState(window.innerWidth);

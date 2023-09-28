@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { BiUserCircle } from "react-icons/bi";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
-
+import { Helmet } from "react-helmet-async";
 const BlogItem = ({ blog }) => {
   return (
     <div>

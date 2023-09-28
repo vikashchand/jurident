@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ChatBot.css';
 import { BiSend } from 'react-icons/bi';
 import { BsChatDotsFill } from 'react-icons/bs';
-
+import { Helmet } from "react-helmet-async";
 import {BsRobot} from 'react-icons/bs'
 
 const ChatBot = () => {

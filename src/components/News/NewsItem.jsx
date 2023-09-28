@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Helmet } from "react-helmet-async";
 export default class NewsItem extends Component {
 
   render() {

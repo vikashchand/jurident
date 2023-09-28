@@ -7,7 +7,7 @@ import MyHd from "../News/MyHeading"
 import Card from "../News/MyCards"
 import FAQ from "../News/MyFAQ"
 import News from '../News/News';
-
+import { Helmet } from "react-helmet-async";
 export default function MyHome() {
   return (
     <>

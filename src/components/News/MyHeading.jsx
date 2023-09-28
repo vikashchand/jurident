@@ -4,7 +4,7 @@ import {FaThumbsUp } from "react-icons/fa";
 import {FaComment} from "react-icons/fa";
 import {FaBookmark} from "react-icons/fa";
 import {FaShare} from "react-icons/fa";
-
+import { Helmet } from "react-helmet-async";
 function MyHeading() {
   return (
     <div>

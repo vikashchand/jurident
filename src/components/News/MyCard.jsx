@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //This is a NEWS card template section done using tailwind CSS.
-
+import { Helmet } from "react-helmet-async";
 export default function MyCard(props) {
   const myProp = props;
   return (

@@ -2,6 +2,7 @@ import React, { useLayoutEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import ProfileBox from './ProfileBox'
+import { Helmet } from "react-helmet-async";
 export const Profile = () => {
   const FormBox =()=>
   {

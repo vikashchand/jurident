@@ -3,7 +3,7 @@ import { userSchema } from "../../Screen/Loginscreen/validations/LoginValidation
 import { Link } from "react-router-dom";
 import { signInAuthUserWithEmailAndPassword, signInWithFacebook, signInWithGooglePopup } from "../../utils/firebase.utils";
 import { useState } from "react";
-
+import { Helmet } from "react-helmet-async";
 const defaultFormFields = {
   email: '',
   password: ''

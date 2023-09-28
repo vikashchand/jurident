@@ -2,7 +2,7 @@ import React from "react";
 import { BlogData } from "./dummyData";
 import BlogItem from "./BlogItem";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
-
+import { Helmet } from "react-helmet-async";
 const Blogs = () => {
   return (
     <div className="d-flex flex-column flex-md-row mx-2 px-4 mt-5 ">

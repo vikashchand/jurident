@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import { HiTrendingUp } from "react-icons/hi";
 import { BsSearch } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
-
+import { Helmet } from "react-helmet-async";
 const Search = ({ searchBlogs, showClear, clearBlogs, setAlert }) => {
   const [text, setText] = useState("");
 

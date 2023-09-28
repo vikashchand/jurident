@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import { HiTrendingUp } from "react-icons/hi";
 import { BsSearch } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
-
+import { Helmet } from "react-helmet-async";
 const Search = () => {
   return (
     <div className="mx-3 px-4 py-5 d-flex justify-content-between">

@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import { FaUser } from "react-icons/fa";
-
+import { Helmet } from "react-helmet-async";
 function MyOpinion(props) {
   return (
     <>

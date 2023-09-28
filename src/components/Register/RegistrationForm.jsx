@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signInWithFacebook, signInWithGooglePopup } from "../../utils/firebase.utils";
-
+import { Helmet } from "react-helmet-async";
 const defaultFormFields = {
   firstName: '',
   lastName: '',

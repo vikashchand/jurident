@@ -1,6 +1,7 @@
 import React from "react";
 import ChangePassBox from "./ChangePassBox";
 import ProfileBox from "./ProfileBox";
+import { Helmet } from "react-helmet-async";
 const ChangePass_Page = () => {  
   //password change
   return (

@@ -3,7 +3,7 @@ import Card1 from "./MyOpinion"
 import Myvid from "./Myvideos"
 import MyMost from "./MyMostViewed"
 import MyAnno from "./MyAnnouncement"
-
+import { Helmet } from "react-helmet-async";
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 

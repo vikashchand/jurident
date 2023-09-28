@@ -2,7 +2,7 @@ import React from 'react'
 import Card from "./MyCard"
 const src = "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/360000/360081.6.jpg"
 const src2 = "https://qph.cf2.quoracdn.net/main-qimg-92a36d74a0db00cc0d69c41819c4671b-lq"
-
+import { Helmet } from "react-helmet-async";
 
 function MyMostViewed() {
   return (

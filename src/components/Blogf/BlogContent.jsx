@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Content } from "../Blogf/dummyData";
-
+import { Helmet } from "react-helmet-async";
 const BlogContent = () => {
   const { topic } = useParams();
   return (

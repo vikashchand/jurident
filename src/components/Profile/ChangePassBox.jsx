@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const ChangePassBox = () => {
   const navigate=useNavigate();
   const [passwords, setPasswords] = useState({

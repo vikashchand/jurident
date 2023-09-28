@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 import { HiChevronUp } from "react-icons/hi";
-
+import { Helmet } from "react-helmet-async";
 const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 

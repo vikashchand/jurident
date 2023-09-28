@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import rhombus from './Rhombus.gif'
-
+import { Helmet } from "react-helmet-async";
 export default class Spinner extends Component {
   render() {
     return (
