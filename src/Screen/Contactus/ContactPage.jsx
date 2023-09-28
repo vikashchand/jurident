@@ -69,6 +69,14 @@ function ContactPage() {
  
   return (
     <div className="container1" style={{ width: "100%" }}>
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div style={{ width: "125%" }}>
         <h1 className="container title mt-10">CONTACT US </h1>
         <div className="container " style={{ width: "100%" }} >

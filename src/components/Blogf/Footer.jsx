@@ -5,6 +5,14 @@ import { FaArrowRight } from "react-icons/fa";
 function MyFooter() {
   return (
     <div className="d-flex justify-content-between p-4 mx-4">
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div className="d-flex">
         <button className="btn border border-dark rounded-pill mx-2 my-2">
           lorem

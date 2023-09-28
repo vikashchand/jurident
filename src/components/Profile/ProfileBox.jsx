@@ -24,6 +24,14 @@ const ProfileBox = () => {
   return (
     
     <div className="p-5 w-full bg-zinc-300  rounded-lg shadow-lg">
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
      
       <div className="flex flex-col space-y-0 justify-center items-center w-full py-2 border-b border-white ">
 

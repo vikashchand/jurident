@@ -62,6 +62,14 @@ const LoginForm = () => {
 
   return (
     <div id="form">
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div className="w-full max-w-xs">
         <form className="bg-white px-8 pt-6 pb-8 mb-4 login" onSubmit={handleSubmit}>
           <h3 id="login-intro">Log into your account</h3>

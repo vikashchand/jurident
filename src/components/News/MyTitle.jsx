@@ -8,6 +8,14 @@ import { FaShare } from "react-icons/fa";
 function MyTitle(props) {
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
     
     <div style={{ marginRight:'100px' }} class="pt-3 text-3xl pb-5">
         <h1>

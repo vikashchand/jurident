@@ -48,6 +48,14 @@ export const Profile = () => {
     };
     return (
       <>
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
         <div className="w-full  bg-zinc-200 p-5 rounded-lg shadow-lg font-mono flex flex-col justify-center">
           <div><h2 className="font-bold mb-1">{`Home>Profile`}</h2></div>
           <form className ="w-full">

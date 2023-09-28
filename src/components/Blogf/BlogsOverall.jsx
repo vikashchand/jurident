@@ -6,6 +6,14 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 const Blogs = () => {
   return (
     <div className="d-flex flex-column flex-md-row mx-2 px-4 mt-5 ">
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div className="d-flex flex-column w-1 md:w-2/3 ">
         {BlogData.map((blog) => (
           <BlogItem key={blog.id} blog={blog} />

@@ -3,6 +3,14 @@ import React from 'react'
 function MySearch() {
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
         <div>
 
 <nav class="grid grid-cols-6 gap-3 space-x-20 mt-3">

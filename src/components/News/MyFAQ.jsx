@@ -32,6 +32,14 @@ const FAQSection = () => {
 
   return (
     <div className="container mx-auto py-8 ">
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       
       <div className="space-y-4">
         {faqData.map((faq, index) => (

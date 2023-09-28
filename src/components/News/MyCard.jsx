@@ -6,6 +6,14 @@ export default function MyCard(props) {
   const myProp = props;
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
     <div class = "pt-12 flex justify-around place-content-evenly">
       
         <div class="max-w-sm rounded overflow-hidden shadow-lg">

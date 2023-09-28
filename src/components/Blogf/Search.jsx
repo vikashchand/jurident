@@ -7,6 +7,14 @@ import { RxCross2 } from "react-icons/rx";
 const Search = () => {
   return (
     <div className="mx-3 px-4 py-5 d-flex justify-content-between">
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div className="d-flex">
         <IconContext.Provider value={{ style: { fontSize: "35px" } }}>
           <HiTrendingUp />

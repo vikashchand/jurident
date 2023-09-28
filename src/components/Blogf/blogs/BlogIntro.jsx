@@ -7,12 +7,28 @@ import { FaThumbsUp } from "react-icons/fa";
 import { FaComment } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa";
 import { FaShare } from "react-icons/fa";
-
+import { Helmet } from "react-helmet-async";
 const BlogIntro = () => {
   const { topic } = useParams();
 
   return (
     <div>
+      {/* import { Helmet } from "react-helmet-async"; */}
+    <Helmet>
+        <title>JURIDENT</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+         
+        />
+        <link rel="canonical" href="/contact" />
+
+        <meta  
+        name ="keywords"
+        content="To be added....."
+        
+        />
+      </Helmet>
       <div className="blog-img-main mt-5"></div>
       <div className="blog-heading p-4 mx-3">
         {Content.filter((item) => item.topic === topic).map(

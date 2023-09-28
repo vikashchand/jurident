@@ -16,6 +16,138 @@ const Footer = () => {
     if (screenSize > 1200) {
         return (
             <div className="absolute top-[6138px] h-[900px] w-[100%]">
+                <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+
+        <meta  
+        name ="keywords"
+        content="Find lawyers for my case"
+        
+        /><meta  
+        name ="keywords"
+        content="Family lawyer consultation"
+        
+        /><meta  
+        name ="keywords"
+        content="Personal injury lawyer consultation"
+        
+        /><meta  
+        name ="keywords"
+        content="Employment law lawyer"
+        
+        /><meta  
+        name ="keywords"
+        content="File my case"
+        
+        /><meta  
+        name ="keywords"
+        content="How to file a case"
+        
+        /><meta  
+        name ="keywords"
+        content="Law consultation"
+        
+        /><meta  
+        name ="keywords"
+        content="Legal services online"
+        
+        /><meta  
+        name ="keywords"
+        content=""
+        
+        />
+        
+        <meta  
+        name ="keywords"
+        content="Intellectual property lawyer consultation"
+        
+        />
+        
+        <meta  
+        name ="keywords"
+        content="Legal services online"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Experienced lawyers online"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Civil case consultation "
+        
+        />
+<meta  
+        name ="keywords"
+        content="Legal procedure consultation"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Business lawyer consultation"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Lawyer near me"
+        
+        />
+
+<meta  
+        name ="keywords"
+        content="Family lawyers near me"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Law consultations near me"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Affordable Law consultation"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Legal professionals community online"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Websites for lawyers"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Online Community for lawyers"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="EXECELLENCE"
+        
+        />
+        
+         <meta  
+        name ="keywords"
+        content="EXPERIENCE"
+        
+        /> 
+        
+        
+        <meta  
+        name ="keywords"
+        content="INTEGRITY"
+        
+        />
+      </Helmet>
                 <h1 className="w-[202px] h-[30px] ml-[162px] mt-[145px] text-[40px] font-bold">
                     JURIDENT
                 </h1>

@@ -31,6 +31,14 @@ const ChangePassBox = () => {
   };
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div className="w-full m-0 bg-zinc-200 p-6 rounded-lg shadow-lg font-mono">
         <h2 className="font-bold mb-1">Change Password</h2>
         <p className=" text-zinc-400 mb-1">

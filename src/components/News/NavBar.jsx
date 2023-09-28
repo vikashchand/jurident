@@ -5,6 +5,14 @@ function NavBar() {
 
   return (
     <div>
+      <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
 
 {/* <nav class="flex justify-center space-x-20 bg-slate-100 mt-3 ml-8 border-y-4 border-black py-2">
   <a href="/news" class="font-medium px-2 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900 text-xl" >My Feed</a>

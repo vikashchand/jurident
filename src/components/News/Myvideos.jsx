@@ -6,6 +6,14 @@ function Myvideos() {
     const playerRef = useRef(null);
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
     <div class = "flex flex-row">
         <div class = "p-10 shrink w-96 h-64">
          <ReactPlayer width = "120%" height = "120%" ref={playerRef} url={VIDEO_PATH} controls={true} />

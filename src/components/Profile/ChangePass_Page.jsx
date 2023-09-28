@@ -5,6 +5,14 @@ const ChangePass_Page = () => {
   //password change
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <header className="bg-white border-b border-black text-center text-black">
         <h1 className="text-2xl py-4">Your Header Text</h1>
       </header>

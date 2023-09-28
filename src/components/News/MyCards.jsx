@@ -20,6 +20,14 @@ export default class MyCards extends Component {
           render() {
             return (
               <div className="container my-3">
+                <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
                 <div className="row grid grid-cols-2 gap-4">
                 {this.state.articles.map((element)=>{
                   return <div className="col md-4" key = {element.url}>

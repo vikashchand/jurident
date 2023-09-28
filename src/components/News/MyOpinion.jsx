@@ -4,6 +4,14 @@ import { FaUser } from "react-icons/fa";
 function MyOpinion(props) {
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
         <div class = "flex flex-row">
         <div class="basis-1/4 p-10">
         <img class="w-full p-5" src={props.src1} alt="Sunset in the mountains"/>

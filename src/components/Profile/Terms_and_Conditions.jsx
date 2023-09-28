@@ -12,6 +12,14 @@ export const Terms_and_Condition=()=>
   }
         return (
             <>
+            <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
       <div className="w-full rounded-lg shadow-lg bg-zinc-300 ">
         <div className="p-5">
         <h2 className="text-2xl text-zinc-500 font-bold  mb-5 p-0 ">

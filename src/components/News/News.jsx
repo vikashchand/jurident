@@ -117,6 +117,196 @@ export default class News extends Component {
     return (
       
       <div className="my-3 ">
+        <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Read all the current affairs and recent happenings on law."/>
+        <link rel="canonical" href="/contact" />
+
+
+        <meta  
+        name ="keywords"
+        content="Power of analytics in lawyer apps"
+        
+        /><meta  
+        name ="keywords"
+        content="How to choose the right litigation"
+        
+        />
+
+<meta  
+        name ="keywords"
+        content="Find lawyers for my case"
+        
+        /><meta  
+        name ="keywords"
+        content="Family lawyer consultation"
+        
+        /><meta  
+        name ="keywords"
+        content="Personal injury lawyer consultation"
+        
+        /><meta  
+        name ="keywords"
+        content="Employment law lawyer"
+        
+        /><meta  
+        name ="keywords"
+        content="File my case"
+        
+        /><meta  
+        name ="keywords"
+        content="How to file a case"
+        
+        /><meta  
+        name ="keywords"
+        content="Law consultation"
+        
+        /><meta  
+        name ="keywords"
+        content="Legal services online"
+        
+        /><meta  
+        name ="keywords"
+        content=""
+        
+        />
+        
+        <meta  
+        name ="keywords"
+        content="Intellectual property lawyer consultation"
+        
+        />
+        
+        <meta  
+        name ="keywords"
+        content="Legal services online"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Experienced lawyers online"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Civil case consultation "
+        
+        />
+<meta  
+        name ="keywords"
+        content="Legal procedure consultation"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Business lawyer consultation"
+        
+        />
+<meta  
+        name ="keywords"
+        content="Lawyer near me"
+        
+        />
+
+<meta  
+        name ="keywords"
+        content="Family lawyers near me"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Law consultations near me"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Affordable Law consultation"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Legal professionals community online"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Websites for lawyers"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Online Community for lawyers"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="EXECELLENCE"
+        
+        />
+        
+         <meta  
+        name ="keywords"
+        content="EXPERIENCE"
+        
+        /> 
+        
+        
+        <meta  
+        name ="keywords"
+        content="INTEGRITY"
+        
+        />
+
+<meta  
+        name ="keywords"
+        content="Latest news on law"
+        
+        />
+
+<meta  
+        name ="keywords"
+        content="Law news"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Legal system today"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Updates on criminal cases"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Updates on civil cases"
+        
+        />
+        <meta  
+        name ="keywords"
+        content="Updates on personal injury cases"
+        
+        /><meta  
+        name ="keywords"
+        content="Updates on cases"
+        
+        /><meta  
+        name ="keywords"
+        content="Trending news on law"
+        
+        /><meta  
+        name ="keywords"
+        content="Updates on employment law cases"
+        
+        /><meta  
+        name ="keywords"
+        content="Lawyers interviews on cases"
+        
+        />
+      </Helmet>
         {this.state.loading && <Spinner/>}
         <div className="flex row">
         {!this.state.loading && this.state.articles.map((element)=>{

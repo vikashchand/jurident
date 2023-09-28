@@ -7,6 +7,14 @@ const src2 = "https://qph.cf2.quoracdn.net/main-qimg-92a36d74a0db00cc0d69c41819c
 function MyMostViewed() {
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
         <div class = "flex flex-row">
             <div class = "flex flex-col basis-1/2">
                 <div>

@@ -6,6 +6,14 @@ export default class NewsItem extends Component {
     let { title, description, imageUrl,newsUrl} = this.props;
     return (
       <div className="my-4 mx-4">
+        <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
         <div className="card" style={{width: "18rem"}}>
         <img src={imageUrl} className="card-img-top" alt="..."/>
         <div className="card-body">

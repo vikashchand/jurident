@@ -4,6 +4,14 @@ import PropTypes from 'prop-types';
 function header() {
   return (
     <>
+    <Helmet>
+        <title>Contact Us - Valsco</title>
+        <meta
+          name="description"
+          content="Ready to take your business to the next level? Contact Valsco today and discover how our cutting-edge software solutions can empower your success."
+        />
+        <link rel="canonical" href="/contact" />
+      </Helmet>
         {/* <h1 style={{ marginTop:'5px'}} class="text-4xl">
           <strong><h1>JURIDENT</h1></strong>
         </h1> */}
